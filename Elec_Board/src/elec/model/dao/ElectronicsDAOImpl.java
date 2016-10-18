@@ -49,25 +49,27 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
 		int result = 0;
 		Connection con = null;
 		PreparedStatement pr = null;
-		
+
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("insert into Electronic values(?,?,?,?,?,sysdate,0,?,0)");
+			pr = con.prepareStatement("insert into Electronics values(?,?,?,?,?,sysdate,0,?,?)");
 			pr.setString(1, electronics.getModelNum());
 			pr.setString(2, electronics.getModelName());
 			pr.setInt(3, electronics.getPrice());
 			pr.setString(4, electronics.getDescription());
 			pr.setString(5, electronics.getPassword());
 			pr.setString(6, electronics.getfName());
+			pr.setInt(7, electronics.getfSize());
 			
 			pr.executeUpdate();
+			result = 1;
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
 			DBUtil.dbClose(con, pr, null);
 		}
 		
-		return 0;
+		return result;
 	}
 	
 	@Override

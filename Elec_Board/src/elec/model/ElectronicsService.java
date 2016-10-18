@@ -25,8 +25,8 @@ public class ElectronicsService {
 	/**
 	 * ElectronicsDAOImpl의 레코드 삽입하는 메소드 호출
 	 */
-	public static int insert(Electronics electronics){
-		return 0;
+	public static int insert(Electronics electronics) throws SQLException{
+		return electronicsDao.insert(electronics);
 	}
 
 	/**
