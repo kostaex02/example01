@@ -43,8 +43,8 @@ public class ElectronicsService {
 	/**
 	 * ElectronicsDAOImpl의 모델번호에 해당하는 레코드 삭제 메소드 호출
 	 */
-	public static int delete(String modelNum, String password){
-		return 1;
+	public static int delete(String modelNum, String password) throws SQLException{
+		return electronicsDao.delete(modelNum, password);
 	}
 
 	/**

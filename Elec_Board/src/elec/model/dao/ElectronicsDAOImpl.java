@@ -94,8 +94,23 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
 	
 	@Override
 	public int delete(String model_num, String password) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pr = null;
+		try{
+			con = DBUtil.getConnection();
+			pr = con.prepareStatement("delete from Electronics where model_num = ? and password = ?");
+			pr.setString(1, model_num);
+			pr.setString(2, password);
+			pr.executeQuery();
+			result = 1;
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			DBUtil.dbClose(con, pr, null);
+		}
+		
+		return result;
 	}
 
 	@Override

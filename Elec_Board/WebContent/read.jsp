@@ -72,7 +72,7 @@ function sendDelete(){
         <span style="font-size:9pt;"><b><pre>${elec.description }</pre></b></span></td>
     </tr>
     
-      <c:if test="${resultContent.fName!=null }">
+      <c:if test="${elec.fName!=null }">
        <tr>
         <td width="100" height="20">
             <p align="right"><b><span style="font-size:9pt;">다운로드</span></b></p>
@@ -80,9 +80,9 @@ function sendDelete(){
         <td width="450" height="20" colspan="3">
         	<span style="font-size:9pt;"><b>
         	<a href='# '>
-    			1111
+    			${elec.fName }
       		</a>
-      		  (  byte)
+      		  (${elec.fSize }  byte)
         </b></span>
         </td>
     </tr>
@@ -90,8 +90,8 @@ function sendDelete(){
     <tr>
         <td height="20" colspan="4" align="center" valign="middle">
 			<!-- 수정시 필요한 데이터들을 hidden으로 숨겨놓고 폼 데이터로 보내준다. -->
-			<form name="requestForm" method=post action="electronics">
-				<input type=hidden name="model_num" value="">
+			<form name="requestForm" method=post action="elec">
+				<input type=hidden name="model_num" value="${elec.modelNum }">
 				<input type=hidden name="command" value="">
 				<input type=hidden name="password" value="">
 				<input type=button value="수정하기" onClick="sendUpdate()">
