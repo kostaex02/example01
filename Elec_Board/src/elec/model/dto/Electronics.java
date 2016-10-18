@@ -13,9 +13,9 @@ public class Electronics {
 	
 	public Electronics(){}
 	
-	public Electronics(String modelNum,String modelName){
+	public Electronics(String modelNum,String password){
 		this.modelNum = modelNum;
-		this.modelName = modelName;
+		this.password = password;
 	}
 	
 	public Electronics(String modelNum, String modelName, int price, String description, String password){
