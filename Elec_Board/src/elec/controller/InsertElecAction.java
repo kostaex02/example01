@@ -34,12 +34,10 @@ public class InsertElecAction implements Action {
 		
 		Electronics elec = new Electronics(modelNum,modelName,Integer.parseInt(price),description,password);
 		
-		if(m.getParameter("file") != null){
-			System.out.println(m.getParameter("file"));
+		if(m.getFilesystemName("file") != null){
 			elec.setfName(m.getFilesystemName("file"));
 			elec.setfSize((int)m.getFile("file").length());
 		}else{
-			System.out.println(m.getParameter("file"));
 			elec.setfName(null);
 			elec.setfSize(0);
 		}

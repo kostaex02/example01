@@ -47,14 +47,12 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
 		try{
 			con = DBUtil.getConnection();
 			pr = con.prepareStatement("select * from Electronics where model_num=?");
-			System.out.println("model_num = "+model_num);
 			pr.setString(1, model_num);
 			
 			rs = pr.executeQuery();
 			if(rs.next()){
 				elec = new Electronics(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), 
 						rs.getString(5), rs.getDate(6).toString(), rs.getInt(7), rs.getString(8), rs.getInt(9));
-				System.out.println(elec);
 			}
 			
 		}catch(SQLException e){

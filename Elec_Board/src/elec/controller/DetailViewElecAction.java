@@ -17,7 +17,7 @@ public class DetailViewElecAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "error.jsp";
 		String modelNum = request.getParameter("modelNum");
-		System.out.println("action model_num = "+modelNum);
+		
 		boolean flag = true;
 		try{
 			if(modelNum != null){
