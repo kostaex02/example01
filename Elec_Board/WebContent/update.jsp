@@ -37,9 +37,9 @@ function checkValid() {
 <BODY>
 
 
-<form name=updateForm method=post action="electronics" onSubmit="return checkValid()">
+<form name=updateForm method=post action="elec?command=update" onSubmit="return checkValid()">
     <input type="hidden" value="update" name="command">
-    <input type='hidden' name='model_num' value="">
+    <input type='hidden' name='model_num' value="${elec.modelNum }">
 	<table align="center" cellpadding="5" cellspacing="1" width="600" border="1">
     <tr>
         <td width="1220" height="20" colspan="2" bgcolor="#00cc00">
@@ -52,7 +52,7 @@ function checkValid() {
         </td>
         <td width="450" height="20"><b><span style="font-size:9pt;">
 		<input type=text name="model_name" size="30"
-		 value=""></span></b></td>
+		 value="${elec.modelName }"></span></b></td>
     </tr>
     <tr>
         <td width="150" height="20">
@@ -60,7 +60,7 @@ function checkValid() {
         </td>
         <td width="450" height="20" ><b><span style="font-size:9pt;">
 		<input type=text name="price" size="30"
-		 value=""></span></b></td>
+		 value="${elec.price }"></span></b></td>
     </tr>
     
     <tr>
@@ -68,7 +68,7 @@ function checkValid() {
             <p align="right"><b><span style="font-size:9pt;">내 용</span></b></p>
         </td>
         <td width="450" height="20" ><b><span style="font-size:9pt;">
-		<textarea name="description" cols="50" rows="10"></textarea></span></b></td>
+		<textarea name="description" cols="50" rows="10">${elec.description }</textarea></span></b></td>
     </tr>
     <tr>
         <td width="150" height="20" >
@@ -84,6 +84,6 @@ function checkValid() {
 </table>
 </form>
 <hr>
-<div align=right><span style="font-size:9pt;">&lt;<a href="electronics">리스트로 돌아가기</a>&gt;</span></div>
+<div align=right><span style="font-size:9pt;">&lt;<a href="elec">리스트로 돌아가기</a>&gt;</span></div>
 </BODY>
 </HTML>

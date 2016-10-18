@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/elec")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
     Map<String,Action> map;
     public FrontController() {}
 

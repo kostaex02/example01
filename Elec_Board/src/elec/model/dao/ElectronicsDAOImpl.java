@@ -115,8 +115,26 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
 
 	@Override
 	public int update(Electronics electronics) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection con = null;
+		PreparedStatement pr = null;
+		int result = 0;
+		try{
+			con = DBUtil.getConnection();
+			pr = con.prepareStatement("update Electronics set model_name = ? , price = ? , description = ? where model_num = ?");
+			pr.setString(1, electronics.getModelName());
+			pr.setInt(2, electronics.getPrice());
+			pr.setString(3, electronics.getDescription());
+			pr.setString(4, electronics.getModelNum());
+			
+			pr.executeUpdate();
+			result = 1;
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			DBUtil.dbClose(con, pr, null);;
+		}
+		
+		return result;
 	}
 
 

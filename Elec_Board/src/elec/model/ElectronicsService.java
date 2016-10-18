@@ -50,7 +50,7 @@ public class ElectronicsService {
 	/**
 	 * ElectronicsDAOImpl의 모델번호에 해당하는 레코드 수정 메소드 호출
 	 */
-	public static int update(String modelNum, String password){
-		return 1;
+	public static int update(Electronics elec) throws SQLException{
+		return electronicsDao.update(elec);
 	}
 }

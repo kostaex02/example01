@@ -1,4 +1,4 @@
-/*package elec.filter;
+package elec.filter;
 
 import java.io.IOException;
 
@@ -32,7 +32,7 @@ public class EncFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig fconfig) throws ServletException {
-		encoding=fconfig.getInitParameter(encoding);
+		encoding=fconfig.getInitParameter("encoding");
 	}
 
-}*/
+}
