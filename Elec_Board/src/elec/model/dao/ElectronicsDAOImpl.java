@@ -40,8 +40,30 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
 	
 	@Override
 	public Electronics selectByModelNum(String model_num, boolean flag) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		Electronics elec = null;
+		Connection con = null;
+		PreparedStatement pr = null;
+		ResultSet rs = null;
+		try{
+			con = DBUtil.getConnection();
+			pr = con.prepareStatement("select * from Electronics where model_num=?");
+			System.out.println("model_num = "+model_num);
+			pr.setString(1, model_num);
+			
+			rs = pr.executeQuery();
+			if(rs.next()){
+				elec = new Electronics(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), 
+						rs.getString(5), rs.getDate(6).toString(), rs.getInt(7), rs.getString(8), rs.getInt(9));
+				System.out.println(elec);
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			DBUtil.dbClose(con, pr, null);
+		}
+		
+		return elec;
 	}
 
 	@Override

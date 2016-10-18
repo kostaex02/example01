@@ -38,7 +38,7 @@ function sendDelete(){
             <p align="right"><b><span style="font-size:9pt;">모델번호</span></b></p>
         </td>
         <td width="450" height="20" colspan="3">
-        	<span style="font-size:9pt;"><b>1111</b></span>
+        	<span style="font-size:9pt;"><b>${elec.modelNum }</b></span>
         </td>
     </tr>
     <tr>
@@ -46,13 +46,13 @@ function sendDelete(){
             <p align="right"><b><span style="font-size:9pt;">등록일</span></b></p>
         </td>
         <td width="300" height="20">
-        	<span style="font-size:9pt;"><b>1111</b></span>
+        	<span style="font-size:9pt;"><b>${elec.writeday }</b></span>
         </td>
         <td width="100" height="20" >
 			<p align="right"><b><span style="font-size:9pt;">조회수</span></b></p>
 		</td>
         <td width="100" height="20">
-			<p><b><span style="font-size:9pt;"></span>111</b></p>
+			<p><b><span style="font-size:9pt;"></span>${elec.readnum }</b></p>
 		</td>
     </tr>
     <tr>
@@ -60,7 +60,7 @@ function sendDelete(){
             <p align="right"><b><span style="font-size:9pt;">모델이름</span></b></p>
         </td>
         <td width="450" height="20" colspan="3">
-        	<span style="font-size:9pt;"><b>1111</b></span>
+        	<span style="font-size:9pt;"><b>${elec.modelName }</b></span>
         </td>
     </tr>
     <tr>
@@ -69,7 +69,7 @@ function sendDelete(){
         </td>
 		
         <td width="450" height="200" valign="top" colspan="3">
-        <span style="font-size:9pt;"><b><pre>1111</pre></b></span></td>
+        <span style="font-size:9pt;"><b><pre>${elec.description }</pre></b></span></td>
     </tr>
     
       <c:if test="${resultContent.fName!=null }">

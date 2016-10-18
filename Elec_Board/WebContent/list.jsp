@@ -44,7 +44,7 @@
     <c:forEach items="${list}" var="elec" varStatus="state">
 	<tr>
 		<td>${elec.modelNum}</td>
-  		<td>${elec.modelName}</td>
+  		<td><a href="elec?command=detail&modelNum=${elec.modelNum}">${elec.modelName}</a></td>
   		<td>${elec.price}</td>
   		<td>${elec.writeday}</td>
   		<td>${elec.fName}</td>

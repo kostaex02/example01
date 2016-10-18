@@ -36,8 +36,9 @@ public class ElectronicsService {
 	 *            boolean flag - 조회수 증가 여부를 판별하는 매개변수임(true이면 조회수증가 / false이면
 	 *            조회수 증가 안함)
 	 */
-	public static Electronics selectByModelNum(String modelNum, boolean flag){
-		return null;
+	public static Electronics selectByModelNum(String modelNum, boolean flag) throws SQLException{
+		Electronics elec = electronicsDao.selectByModelNum(modelNum, flag);
+		return elec;
 	}
 	/**
 	 * ElectronicsDAOImpl의 모델번호에 해당하는 레코드 삭제 메소드 호출

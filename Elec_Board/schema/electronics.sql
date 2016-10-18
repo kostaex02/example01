@@ -26,3 +26,7 @@ SELECT writeday, to_char(writeday, 'YYYY-MM-DD HH:MI:SS AM') FROM Electronics;
  select model_num,model_name,price, description,password , to_char(writeday, 'YYYY-MM-DD HH:MI:SS AM') as writeday ,readnum
  from Electronics ;
 
+ select * from Electronics where model_num = 'a40';
+
+commit
+ select * from Electronics where model_num='SHV-E250S'
