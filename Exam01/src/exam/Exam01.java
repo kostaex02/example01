@@ -6,5 +6,6 @@ public class Exam01 {
 		System.out.println("새로운 것 추가dd");
 		System.out.println("지수 접속 완료");
 		System.out.println("수정!");
+		System.out.println("밥밥!!!!");
 	}
 }
