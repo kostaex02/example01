@@ -16,7 +16,7 @@ import javax.servlet.annotation.WebInitParam;
 		initParams = {
 				@WebInitParam(name="encoding",value="UTF-8")}
 		)
-public class EncFilter implements Filter {
+public class MelonFilter implements Filter {
 	String encoding;
 	@Override
 	public void destroy() {
