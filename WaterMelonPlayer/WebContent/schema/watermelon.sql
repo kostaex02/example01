@@ -19,7 +19,7 @@ create table user_table(
 create table song(
     song_name varchar2(20) not null, -- 곡 이름
     song_artist varchar2(20) not null, -- 가수 이름
-    genre_code varchar2(10) references song_genre(genre_code) , -- 장르
+    genre_code varchar2(10) references song_genre(genre_code) , -- 장르s
     song_album varchar2(20) not null, -- 앨범 이름
     song_url varchar2(50) primary key, --url
     song_imgurl varchar2(50), -- 이미지 url
