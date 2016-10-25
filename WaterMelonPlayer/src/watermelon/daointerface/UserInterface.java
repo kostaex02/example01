@@ -17,6 +17,10 @@ public interface UserInterface {
 	User selectUser(String userId) throws SQLException;
 	
 	/**
+	 * 로그인을 위한 유저검색
+	 * */
+	User loginUser(String userId,String pwd) throws SQLException;
+	/**
 	 * 유저 삭제
 	 */
 	int deleteUser(String userId) throws SQLException;

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import watermelon.Service.SelectService;
+import watermelon.Service.SelectSong;
 import watermelon.dto.Song;
 
 @WebServlet("/select")
@@ -18,7 +18,7 @@ public class SelectController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String select = request.getParameter("select");
-		SelectService service = new SelectService();
+		SelectSong service = new SelectSong();
 		
 		//select값에 따라 service의 메소드를 다르게 호출
 		if(select.equals("song")){

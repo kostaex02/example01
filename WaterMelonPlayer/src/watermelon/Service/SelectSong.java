@@ -7,7 +7,7 @@ import java.util.List;
 import watermelon.dao.SongDAO;
 import watermelon.dto.Song;
 
-public class SelectService {
+public class SelectSong {
 	SongDAO dao = new SongDAO();
 	List<Song> list = new ArrayList<>();
 	
@@ -22,4 +22,6 @@ public class SelectService {
 		//담은 값 리턴
 		return list;
 	}
+	
+	
 }

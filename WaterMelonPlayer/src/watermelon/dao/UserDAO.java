@@ -109,5 +109,28 @@ public class UserDAO implements UserInterface {
 		}
 		return result;
 	}
+	
+	@Override
+	public User loginUser(String userId, String pwd) throws SQLException {
+		
+		User user = null;
+		Connection con = null;
+		PreparedStatement pr = null;
+		ResultSet rs = null;
+		try{
+			con = DBUtil.getConnection();
+			pr = con.prepareStatement("select * from user where user_id=? && user_password=?");
+			pr.setString(1, userId);
+			pr.setString(2, pwd);
+			rs = pr.executeQuery();
+			
+			if(rs.next()){
+				user = new User(rs.getString(1),rs.getString(2),rs.getString(3),rs.getDate(4),rs.getInt(5),rs.getInt(6));
+			}
+		}finally{
+			DBUtil.dbClose(con, pr, rs);
+		}
+		return user;
+	}
 
 }
