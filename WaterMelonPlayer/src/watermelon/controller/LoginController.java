@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import watermelon.Service.SelectUser;
+
+import watermelon.Service.UserService;
 import watermelon.dto.User;
 
 /**
@@ -17,7 +18,7 @@ import watermelon.dto.User;
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	SelectUser service = new SelectUser();
+	UserService service = new UserService();
    	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
