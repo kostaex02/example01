@@ -34,7 +34,7 @@ public interface SongInterface {
 	/**
 	 *  º±≈√∞Ó ªË¡¶
 	 */
-	int deleteSong(Song song) throws SQLException;
+	int deleteSong(String songName, String songArtist) throws SQLException;
 	
 	
 }

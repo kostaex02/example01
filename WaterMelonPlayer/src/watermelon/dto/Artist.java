@@ -2,33 +2,31 @@ package watermelon.dto;
 
 public class Artist {
 	private String songArtist;
-	private String ArtistImgUrl;
+	private String gender;
+	private String artistGroup;
 	
-	
-	public Artist(String songArtist, String artistImgUrl) {
+	public Artist(){}
+	public Artist(String songArtist, String gender, String artistGroup) {
 		this.songArtist = songArtist;
-		this.ArtistImgUrl = artistImgUrl;
+		this.gender = gender;
+		this.artistGroup = artistGroup;
 	}
-
-
 	public String getSongArtist() {
 		return songArtist;
 	}
-
-
 	public void setSongArtist(String songArtist) {
 		this.songArtist = songArtist;
 	}
-
-
-	public String getArtistImgUrl() {
-		return ArtistImgUrl;
+	public String getGender() {
+		return gender;
 	}
-
-
-	public void setArtistImgUrl(String artistImgUrl) {
-		ArtistImgUrl = artistImgUrl;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
-	
-	
+	public String getArtistGroup() {
+		return artistGroup;
+	}
+	public void setArtistGroup(String artistGroup) {
+		this.artistGroup = artistGroup;
+	}
 }

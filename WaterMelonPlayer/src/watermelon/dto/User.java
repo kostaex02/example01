@@ -1,17 +1,19 @@
 package watermelon.dto;
 
+import java.util.Date;
+
 public class User {
 	private String userId;
 	private String userPassword;
 	private String userName;
-	private String userBirth;
-	private String userGender;
-	private String userCheck;
+	private Date userBirth;
+	private int userGender;
+	private int userCheck;
 	
 	public User(){}
 
-	public User(String userId, String userPassword, String userName, String userBirth, String userGender,
-			String userCheck) {
+	public User(String userId, String userPassword, String userName, Date userBirth, int userGender,
+			int userCheck) {
 		this.userId = userId;
 		this.userPassword = userPassword;
 		this.userName = userName;
@@ -44,27 +46,27 @@ public class User {
 		this.userName = userName;
 	}
 
-	public String getUserBirth() {
+	public Date getUserBirth() {
 		return userBirth;
 	}
 
-	public void setUserBirth(String userBirth) {
+	public void setUserBirth(Date userBirth) {
 		this.userBirth = userBirth;
 	}
 
-	public String getUserGender() {
+	public int getUserGender() {
 		return userGender;
 	}
 
-	public void setUserGender(String userGender) {
+	public void setUserGender(int userGender) {
 		this.userGender = userGender;
 	}
 
-	public String getUserCheck() {
+	public int getUserCheck() {
 		return userCheck;
 	}
 
-	public void setUserCheck(String userCheck) {
+	public void setUserCheck(int userCheck) {
 		this.userCheck = userCheck;
 	}
 	

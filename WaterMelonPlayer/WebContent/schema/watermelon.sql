@@ -36,8 +36,12 @@ create sequence my_album_no_sequence nocache;
 
 create table my_album(
      my_album_no number primary key,
-     id varchar2(20) references user_table(user_id),
-     url varchar2(20) references song(song_url)
+     user_name varchar2(20) references user_table(user_name), -- 회원 이름
+     song_name varchar2(20) references song(song_name), -- 곡명
+     song_artist varchar2(20) references song(song_artist), --가수명
+     song_album varchar2(20) references song(song_album), --앨범명
+     url varchar2(20) references song(song_url), -- url
+     imgurl varchar2(20) references song(song_imgurl) -- 이미지 url
 );
 
 drop table my_album;
@@ -50,4 +54,20 @@ create table review(
   review_contents varchar2(100));         -- 리뷰 100자 이내로 저장
 
 drop table review;
-  
+
+create table song_artist(
+	artist varchar2(25) primary key,
+	gender number,
+	group number
+);
+
+drop table song_artist;
+
+create table song_album(
+	song_album varchar2(25) primary key,
+	song_artist varchar2(25) references song_artist(artist),
+	debut_date date,
+	genre_code varchar2(10) references song_genre(genre_code)
+);
+
+drop table song_album;
