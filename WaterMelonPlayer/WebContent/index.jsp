@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Jumbotron Template for Bootstraps</title>
+<html >
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0. user-scalable=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>main</title>
         <!-- Bootstrap core CSS -->
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
@@ -14,13 +18,12 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-<title>loginForm</title>
-</head>
-<body>
-	    <nav class="navbar-inverse fixed">
+    </head>
+    <body>
+        <nav class="navbar-inverse fixed">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -31,10 +34,10 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right" method="post" action="login">
                         <div class="form-group">
-                            <input type="text" placeholder="Email" class="form-control" name="email">
+                            <input type="text" placeholder="Email" class="form-control" id="email">
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Password" class="form-control" name="pwd">
+                            <input type="password" placeholder="Password" class="form-control" id="pwd">
                         </div>
                         <button type="submit" class="btn btn-success">로그인</button>
                     </form>
@@ -43,25 +46,26 @@
             </div>
         </nav>
         <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron">
+        <div class="jumbotron" >
         <div class="logo-wrapper">
 			  <img src="img/wm.png">     
         </div>
-            <form class="container text-right" id="contents" action="insert" method="post">
+            <div class="container text-right" id="contents" >
+            
                 <p>
-    이메일 : <input type="text" placeholder="Email" id="email" >
+    <input type="text" placeholder="Email" id="email" >
                 <p>
-    이름 : <input type="text" placeholder="Name" name="name">
+   <input type="text" placeholder="Name" id="name">
                 <p>
-    비밀번호 : <input type="password" placeholder="Password" name="pwd">
+   <input type="password" placeholder="Password" id="pwd">
                 <p>
-    생일 : <input type="text" placeholder="년월일 6자리 입력" id="birth"><p>
-    성별 : 남 <input type="radio" name="gender" value="male" checked>  여 <input type="radio" name="gender" value="female" >
+  <input type="text" placeholder="년월일 6자리 입력" id="birth"><p>
+	남 <input type="radio" name="gender" value="male" checked>  여 <input type="radio" name="gender" value="female" >
              <p>   
-    <a class="btn btn-primary btn-lg" href="insert" role="button">가입하기</a></p>
-            </form>
+    <a class="btn btn-primary btn-lg" href="#" role="button">가입하기</a></p>
+            </div >
         </div>
-        <div class="container">
+        <div class="container" style="height: 10%; width: 90%">
             <!-- Example row of columns -->
             <div class="row">
 </div>
@@ -78,5 +82,5 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
-</body>
+    </body>
 </html>
