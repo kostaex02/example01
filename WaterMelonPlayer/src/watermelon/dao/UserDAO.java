@@ -22,7 +22,7 @@ public class UserDAO implements UserInterface {
 		ResultSet rs = null;
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("select * from user");
+			pr = con.prepareStatement("select * from user_table");
 			rs = pr.executeQuery();
 			
 			while(rs.next()){
@@ -43,7 +43,7 @@ public class UserDAO implements UserInterface {
 		ResultSet rs = null;
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("select * from user where user_id=?");
+			pr = con.prepareStatement("select * from user_table where user_id=?");
 			pr.setString(1, userId);
 			rs = pr.executeQuery();
 			
@@ -64,7 +64,7 @@ public class UserDAO implements UserInterface {
 		
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("delete from user where user_id=?");
+			pr = con.prepareStatement("delete from user_table where user_id=?");
 			pr.setString(1, userId);
 			result = pr.executeUpdate();
 		}finally{
@@ -80,7 +80,7 @@ public class UserDAO implements UserInterface {
 		PreparedStatement pr = null;
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("update user set user_password = ?");
+			pr = con.prepareStatement("update user_table set user_password = ?");
 			pr.setString(1, userPassword);
 			result = pr.executeUpdate();
 		}finally{
@@ -96,7 +96,7 @@ public class UserDAO implements UserInterface {
 		PreparedStatement pr = null;
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("insert into user values(?,?,?,?,?,?)");
+			pr = con.prepareStatement("insert into user_table values(?,?,?,?,?,?)");
 			pr.setString(1, user.getUserId());
 			pr.setString(2, user.getUserPassword());
 			pr.setString(3, user.getUserName());
@@ -119,7 +119,7 @@ public class UserDAO implements UserInterface {
 		ResultSet rs = null;
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("select * from user where user_id=? && user_password=?");
+			pr = con.prepareStatement("select * from user_table where user_id=? and user_password=?");
 			pr.setString(1, userId);
 			pr.setString(2, pwd);
 			rs = pr.executeQuery();

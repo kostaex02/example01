@@ -71,3 +71,8 @@ create table song_album(
 );
 
 drop table song_album;
+
+commit
+
+select * from bank1;
+select * from user_table;

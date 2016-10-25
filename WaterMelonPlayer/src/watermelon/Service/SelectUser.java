@@ -10,7 +10,7 @@ public class SelectUser {
 	User user = new User();
 	public String login(String email, String pwd) {
 	 	try {
-			user = dao.loginUser(email,pwd);
+	 		user = dao.loginUser(email,pwd);
 			String userName = user.getUserName();
 			return userName;
 		} catch (SQLException e) {

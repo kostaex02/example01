@@ -31,10 +31,10 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right" method="post" action="login">
                         <div class="form-group">
-                            <input type="text" placeholder="Email" class="form-control" id="email">
+                            <input type="text" placeholder="Email" class="form-control" name="email">
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Password" class="form-control" id="pwd">
+                            <input type="password" placeholder="Password" class="form-control" name="pwd">
                         </div>
                         <button type="submit" class="btn btn-success">로그인</button>
                     </form>
@@ -49,11 +49,11 @@
         </div>
             <form class="container text-right" id="contents" action="insert" method="post">
                 <p>
-    이메일 : <input type="text" placeholder="Email" id="email">
+    이메일 : <input type="text" placeholder="Email" id="email" >
                 <p>
-    이름 : <input type="text" placeholder="Name" id="name">
+    이름 : <input type="text" placeholder="Name" name="name">
                 <p>
-    비밀번호 : <input type="password" placeholder="Password" id="pwd">
+    비밀번호 : <input type="password" placeholder="Password" name="pwd">
                 <p>
     생일 : <input type="text" placeholder="년월일 6자리 입력" id="birth"><p>
     성별 : 남 <input type="radio" name="gender" value="male" checked>  여 <input type="radio" name="gender" value="female" >
