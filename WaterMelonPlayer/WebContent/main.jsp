@@ -14,6 +14,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <title>Insert title here</title>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+</script>
 </head>
 <body>
  <nav class="navbar-inverse">
@@ -39,7 +43,7 @@
                         </div>
                         <button type="submit" class="btn btn-success">검색</button>
                         <div class="form-group" style="color:red; margin-left:100px">
-                        	&nbsp; &nbsp; <%=request.getParameter("id") %>>님 환영합니다. &nbsp; &nbsp;
+                        	&nbsp; &nbsp; <%=request.getAttribute("User") %>님 환영합니다. &nbsp; &nbsp;
                         </div>
                         	<input type="button" class="btn btn-info" value="로그아웃">
                             <input type="button" class="btn btn-info" value="회원정보변경">
