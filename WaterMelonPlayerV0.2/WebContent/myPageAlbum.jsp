@@ -19,7 +19,7 @@
 
     </head>
     <body>
-        <nav class="navbar-inverse" >
+        <nav class="navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -50,7 +50,7 @@
                         <button type="submit" class="btn btn-success">검색</button>
                         
                         
-                        <span class="form-group" style="color:red; margin-left: 14%">김김김님 환영합니다.</span>
+                        <span class="form-group" style="color:#444444; margin-left: 14%">김김김님 환영합니다.</span>
                         	<input type="button" class="btn btn-info btn-sm" value="회원정보변경" style="margin-left: 5px">
                             <input type="button" class="btn btn-info btn-sm" value="로그아웃" style="margin-right: 10px">
                     </form>
@@ -60,29 +60,19 @@
             </div>
         </nav>
         <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="container">
-            <div class="row row-offcanvas ">
-                <div class="col-xs-12 col-sm-9">
-                    <p class="pull-right visible-xs"><button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>
-                    <div class="row"> <!-- 행 -->
-                    	<div class="col-xs-6 col-lg-4" style="margin-top: 50px; outline-style: none;"> <!-- 열 -->
-                            <img src="img/1989.png" style="margin: 0px">
-                        </div>
-                    	<div class="col-xs-6 col-lg-8" style="margin-top : 50px; outline-style: none; ">
-                    		<h2 class="text-left">ALBUM</h2>
-                        	<h3 class="text-left">아티스트 : 신화</h3>
-                            <h3 class="text-left">발매일&nbsp; &nbsp; : 2016-10-22</h3>
-                            <h3 class="text-left">장르&nbsp; &nbsp; &nbsp; &nbsp; : 발라드</h3>
-                        </div>
-                        <!--/.col-xs-6.col-lg-4-->
-                    </div>
-                    <br>
-                    수록곡
-                    <span class="badge" style="background-color:green">3</span>
-                    <hr style="border-color:green">
-                    <!--/row-->
-                    <div class="row">
-                    	<table class="table table-striped">
+        <div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2 sidebar">
+					<ul class="nav nav-sidebar">
+						<li class="active"><a href="#">마이앨범<span class="sr-only">(current)</span></a>
+						</li>
+						<li><a href="#">비밀번호 변경</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<h1 class="page-header">마이앨범</h1>
+					<div class="table-responsive">
+						<table class="table table-striped">
     					<thead>
         					<tr>
         						<th></th>
@@ -94,15 +84,15 @@
 					    </thead>
 					    <tbody>
 					        <tr>
-					       		<td>
+					       		<td class="col-lg-1">
 					       			<label data-pg-collapsed> 
     								<input class="control-label" type="checkbox" value="">    
 									</label>
 								</td>
-					            <td>1</td>
-					            <td>Lorem</td>
-					            <td>ipsum&nbsp;<span class="label label-danger">TITLE</span></td>
-					            <td>dolor</td>
+					            <td class="col-lg-1">1</td>
+					            <td class="col-lg-2">Lorem</td>
+					            <td class="col-lg-4">ipsum</td>
+					            <td class="col-lg-5">dolor</td>
 					        </tr>
 					        <tr>
 					        	<td>
@@ -129,40 +119,8 @@
 					        
 					    </tbody>
 					</table>
-                    </div>
-                     <hr style="border-color:green">
-                     <h3>앨범소개</h3>
-                     <hr>
-                     <h6>Taylor Swift <br><br><br>노래를 잘함</h6>
-                     <hr style="border-color:green">
-                     <h3>리뷰</h3>
-                     <div class="col-xs-6 col-lg-10" style="outline-style: none; ">
-                        	<textarea class="form-control" rows="2"></textarea>
-                     </div>
-                     <div class="col-xs-6 col-lg-2" style="outline-style: none; ">
-                        	<button type="button" class="btn btn-default btn-lg" >등록</button>
-                     </div>
-                     .
-                     </div>
-                     <div class="row">
-                     
-                     <table class="table table-striped">
-    					<tbody>
-					        <tr>
-					       		<td class="col-lg-1">ID</td>
-					            <td class="col-lg-11">Contents</td>
-					        </tr>
-					        <tr>
-					            <td>ID</td>
-					            <td>Contents</td>
-					        </tr>
-					        <tr>
-					        	<td>ID</td>
-					            <td>Contents</td>
-					        </tr>
-					        
-					    </tbody>
-					</table>
+					</div>
+				
                 </div>
                 </div>
             <hr>

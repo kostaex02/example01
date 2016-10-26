@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- Bootstrap core CSS -->
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="offcanvas.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -53,8 +53,8 @@
                         <div class="form-group" style="color:red; margin-left:100px">
                         	&nbsp; &nbsp; <%=request.getAttribute("User") %>님 환영합니다. &nbsp; &nbsp;
                         </div>
-                        	<input type="button" class="btn btn-info" value="로그아웃">
-                            <input type="button" class="btn btn-info" value="회원정보변경">
+                        	<input type="button" class="btn btn-info btn-sm" value="로그아웃">
+                            <input type="button" class="btn btn-info btn-sm" value="마이페이지">
                     </form>
                 </div>
                 
