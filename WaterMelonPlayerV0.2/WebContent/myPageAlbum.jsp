@@ -28,7 +28,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">WaterMelon</a>
+                    <a class="navbar-brand" href="#">
+        				<img alt="Brand" src="img/waterMelon.png" width="130px" style="margin-top:-7px">
+      				</a>
                 </div>
                 <span id="navbar" class="navbar-collapse collapse" style="padding-left: 24%">
                     <form class="navbar-form">
@@ -51,7 +53,7 @@
                         
                         
                         <span class="form-group" style="color:#444444; margin-left: 14%">김김김님 환영합니다.</span>
-                        	<input type="button" class="btn btn-info btn-sm" value="회원정보변경" style="margin-left: 5px">
+                        	<input type="button" class="btn btn-info btn-sm" value="마이페이지" style="margin-left: 5px">
                             <input type="button" class="btn btn-info btn-sm" value="로그아웃" style="margin-right: 10px">
                     </form>
                 </span>

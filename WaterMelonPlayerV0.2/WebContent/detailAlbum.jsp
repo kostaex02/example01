@@ -28,7 +28,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">WaterMelon</a>
+                    <a class="navbar-brand" href="#">
+        				<img alt="Brand" src="img/waterMelon.png" width="130px" style="margin-top:-7px">
+      				</a>
                 </div>
                 <span id="navbar" class="navbar-collapse collapse" style="padding-left: 24%">
                     <form class="navbar-form">

@@ -12,7 +12,7 @@
         <!-- Bootstrap core CSS -->
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
-        <link href="jumbotron.css" rel="stylesheet">
+        <link href="css/jumbotron.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -29,7 +29,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">WaterMelon</a>
+                    <a class="navbar-brand" href="#">
+        				<img alt="Brand" src="img/waterMelon.png" width="130px" style="margin-top:-7px">
+      				</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right" method="post" action="login">
@@ -48,11 +50,11 @@
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
         <div class="logo-wrapper">
-			  <img src="img/wm.png">     
+			  <img src="img/water.gif">     
         </div>
             <form class="container text-right" id="contents" action="insert" method="post">
                 <p>
-    <input type="text" placeholder="Email" name="email" >
+    <input type="text" placeholder="Email" name="email">
                 <p>
     <input type="text" placeholder="Name" name="name">
                 <p>
