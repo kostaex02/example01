@@ -1,8 +1,10 @@
 package watermelon.Service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import watermelon.dao.UserDAO;
+import watermelon.dto.Album;
 import watermelon.dto.User;
 
 public class UserService {
@@ -33,5 +35,11 @@ public class UserService {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	//유저 아이디로 해당아이디의 앨범을 검색해서 리턴
+	public static List<Album> getMyalbum(String id) {
+		//10.26 DAO생성후 추가 요망
+		return null;
 	}
 }

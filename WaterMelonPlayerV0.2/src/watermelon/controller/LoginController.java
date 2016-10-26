@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import watermelon.Service.SelectUser;
 import watermelon.dto.User;
@@ -22,9 +23,9 @@ public class LoginController extends HttpServlet {
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
 		User user = service.login(email, pwd);
-		request.setAttribute("User", user);
+		HttpSession session = request.getSession();
+		session.setAttribute("User", user);
 		request.getRequestDispatcher("main.jsp").forward(request, response);
-		
 	}
 
 }
