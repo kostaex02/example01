@@ -73,11 +73,13 @@
 			
 				<div class="col-sm-9 col-md-10" align="center" style="margin-top:100px">
 					<h3>비밀번호 수정</h3><br>
-					<input type="text" placeholder="현재비밀번호"><br><br>
-					<input type="text" placeholder="변경할 비밀번호"><br><br>
-					<input type="text" placeholder="변경할 비밀번호 확인"><br><br>
-					<button type="button" class="btn btn-success">확인</button>
-					<button type="button" class="btn btn-danger" style="margin-left:15px">취소</button>
+					<form action="pwdChange" method="post">
+					<input type="text" name="oldPwd" placeholder="현재비밀번호"><br><br>
+					<input type="text" name="newPwd" placeholder="변경할 비밀번호"><br><br>
+					<input type="text" name="isPwd" placeholder="변경할 비밀번호 확인"><br><br>
+					<input type="submit" class="btn btn-success" value="확인">
+					<button type="button" class="btn btn-danger" style="margin-left:15px">취소
+					</form>
 				</div>
 			</div>
             <hr>

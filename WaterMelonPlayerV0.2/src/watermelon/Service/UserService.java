@@ -42,4 +42,10 @@ public class UserService {
 		//10.26 DAO생성후 추가 요망
 		return null;
 	}
+	
+	//비밀번호 확인후 일치할경우 비밀번호를 새로운 비밀번호로 변경
+	public static boolean pwdChange(String id, String oldPwd, String newPwd) {
+		
+		return true;
+	}
 }
