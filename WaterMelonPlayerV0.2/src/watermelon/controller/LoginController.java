@@ -21,7 +21,7 @@ public class LoginController extends HttpServlet {
    	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
-		String user = service.login(email, pwd);
+		User user = service.login(email, pwd);
 		request.setAttribute("User", user);
 		request.getRequestDispatcher("main.jsp").forward(request, response);
 		

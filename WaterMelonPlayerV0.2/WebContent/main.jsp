@@ -15,8 +15,13 @@
     <![endif]-->
 <title>Insert title here</title>
 
-<script src="js/jquery-2.2.4.js"></script>
+<script src="bootstrap/js/jquery-2.2.4.js"></script>
 <script type="text/javascript">
+$(function() {
+	$("#myPage").click(function() {
+		location.href="myPage";
+	})
+})
 </script>
 </head>
 <body>
@@ -54,7 +59,7 @@
                         	&nbsp; &nbsp; <%=request.getAttribute("User") %>님 환영합니다. &nbsp; &nbsp;
                         </div>
                         	<input type="button" class="btn btn-info btn-sm" value="로그아웃">
-                            <input type="button" class="btn btn-info btn-sm" value="마이페이지">
+                            <input type="button" class="btn btn-info btn-sm" id ="myPage" value="마이페이지">
                     </form>
                 </div>
                 
