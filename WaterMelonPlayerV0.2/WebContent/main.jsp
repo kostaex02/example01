@@ -58,7 +58,7 @@ $(function() {
                         <button type="submit" class="btn btn-success">검색</button>
 
                         <div class="form-group" style="color:red; margin-left:100px">
-                        	&nbsp; &nbsp; <%=request.getAttribute("User") %>님 환영합니다. &nbsp; &nbsp;
+                        	&nbsp; &nbsp; ${User.userName}님 환영합니다. &nbsp; &nbsp;
                         </div>
                         	<input type="button" class="btn btn-info btn-sm" value="로그아웃">
                             <input type="button" class="btn btn-info btn-sm" id ="myPage" value="마이페이지">
