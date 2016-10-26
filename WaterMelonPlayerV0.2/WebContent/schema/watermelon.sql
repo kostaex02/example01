@@ -6,6 +6,7 @@ grant connect, resource to watermelon;
 
 grant create sequence to watermelon;
 
+
 create table user_table(
   user_id varchar2(20) primary key, --회원 id 이메일양식
   user_password varchar2(20) not null, -- 회원 비밀번호
