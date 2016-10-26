@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import watermelon.Service.SelectSong;
+import watermelon.dto.Artist;
 import watermelon.dto.Song;
 
 @WebServlet("/select")
@@ -26,7 +27,7 @@ public class SelectController extends HttpServlet {
 			request.setAttribute("list", list);
 			request.getRequestDispatcher("SerachView.jsp").forward(request, response);
 		}else if(select.equals("artist")){
-			
+			List<Artist> list = null;
 		}else if(select.equals("album")){
 			
 		}

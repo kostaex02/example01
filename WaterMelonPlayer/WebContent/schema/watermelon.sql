@@ -6,6 +6,8 @@ grant connect, resource to watermelon;
 
 grant create sequence to watermelon;
 
+
+select * from user_table;
 create table user_table(
   user_id varchar2(20) primary key, --회원 id 이메일양식
   user_password varchar2(20) not null, -- 회원 비밀번호
@@ -14,6 +16,7 @@ create table user_table(
   user_gender number, -- 회원 성별 남 0 여 1
   user_check number default 0); --유저, 관리자 구별
   
+  insert into user_table values('abc@gmail.com', '1234', '김회원',SYSDATE, 0, 0)
   drop table user_table;
   
 create table song(
