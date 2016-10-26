@@ -31,17 +31,25 @@
                     </button>
                     <a class="navbar-brand" href="#">WaterMelon</a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse" >
+                <div id="navbar" class="navbar-collapse collapse" style="padding-left: 24%">
                     <form class="navbar-form">
-                        <div class="form-group">
-                        	<select name="select" action="select" style="height:30px;">
-                        		<option value="song">곡이름</option>
-                        		<option value="album">앨범</option>
-                        		<option value="artist">아티스트</option>
-                       	 	</select>
-                            <input type="text" size="30" class="form-control" id="content">
-                        </div>
+                    <div class="col">
+                       <div class="col-lg-4">
+  						  <div class="input-group">
+    						<div class="input-group-btn">
+     							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">곡명<span class="caret"></span></button>
+      								<ul class="dropdown-menu" role="menu">
+							          <li><a href="#">곡명</a></li>
+							          <li><a href="#">앨범</a></li>
+							          <li><a href="#">아티스트</a></li>
+							        </ul>
+							</div><!-- /btn-group -->
+								<input type="text" class="form-control" aria-label="...">
+							</div><!-- /input-group -->
+						</div><!-- /.col-lg-4 -->
+					</div>
                         <button type="submit" class="btn btn-success">검색</button>
+
                         <div class="form-group" style="color:red; margin-left:100px">
                         	&nbsp; &nbsp; <%=request.getAttribute("User") %>님 환영합니다. &nbsp; &nbsp;
                         </div>

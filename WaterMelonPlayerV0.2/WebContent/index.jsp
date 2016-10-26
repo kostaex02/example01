@@ -20,7 +20,7 @@
     <![endif]-->
     </head>
     <body>
-        <nav class="navbar-inverse fixed">
+        <nav class="navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
@@ -52,14 +52,14 @@
         </div>
             <form class="container text-right" id="contents" action="insert" method="post">
                 <p>
-    이메일 : <input type="text" placeholder="Email" name="email" >
+    <input type="text" placeholder="Email" name="email" >
                 <p>
-    이름 : <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Name" name="name">
                 <p>
-    비밀번호 : <input type="password" placeholder="Password" name="pwd">
+    <input type="password" placeholder="Password" name="pwd">
                 <p>
-    생일 : <input type="text" placeholder="년월일 6자리 입력" name="birth"><p>
-    성별 : 남 <input type="radio" name="gender" value="male" checked>  여 <input type="radio" name="gender" value="female" >
+    <input type="text" placeholder="년월일 6자리 입력" name="birth"><p>
+    남 <input type="radio" name="gender" value="male" checked>  여 <input type="radio" name="gender" value="female" >
              <p>   
     <button class="btn btn-primary btn-lg" type="submit">가입하기</button></p>
             </form>

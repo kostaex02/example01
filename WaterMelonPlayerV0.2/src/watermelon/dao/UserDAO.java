@@ -122,9 +122,7 @@ public class UserDAO implements UserInterface {
 			pr.setString(1, userId);
 			pr.setString(2, pwd);
 			rs = pr.executeQuery();
-			System.out.println(1);
 			if(rs.next()){
-				System.out.println(2);
 				user = new User(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getInt(6));
 			}
 		}finally{
