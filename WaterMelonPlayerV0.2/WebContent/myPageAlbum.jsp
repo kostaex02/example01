@@ -16,8 +16,17 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    </head>
+	<style>
+	#btn_play{
+		padding:0px 0px;
+		border:0px;
+	}
+	label{
+		margin-bottom: 0px;
+	}
+	
+	</style>
+	</head>
     <body>
         <nav class="navbar-inverse">
             <div class="container">
@@ -79,22 +88,29 @@
         					<tr>
         						<th></th>
         						<th>No</th>
-            					<th>button</th>
+            					<th></th>
             					<th>곡명</th>
 					            <th>아티스트</th>
 					        </tr>
 					    </thead>
 					    <tbody>
 					        <tr>
-					       		<td class="col-lg-1">
+					       		<td class="col-lg-0">
 					       			<label data-pg-collapsed> 
-    								<input class="control-label" type="checkbox" value="">    
+    								<input class="control-label" type="checkbox" value="" align="center">  
 									</label>
 								</td>
-					            <td class="col-lg-1">1</td>
-					            <td class="col-lg-2">Lorem</td>
-					            <td class="col-lg-4">ipsum</td>
-					            <td class="col-lg-5">dolor</td>
+					            <td class="col-lg-0">1</td>
+					            <td class="col-lg-1">
+					            	<a href="#" class="btn primary" id="btn_play">
+					            		<img src="img/img_play_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					       			<a href="#" class="btn primary" id="btn_play">
+					       				<img src="img/img_add_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					            </td>
+					            <td class="col-lg-3">ipsum</td>
+					            <td class="col-lg-8">dolor</td>
 					        </tr>
 					        <tr>
 					        	<td>
@@ -103,7 +119,14 @@
 									</label>
 					        	</td>
 					            <td>2</td>
-					            <td>amet</td>
+					            <td>
+					            	<a href="#" class="btn primary" id="btn_play">
+					            		<img src="img/img_play_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					       			<a href="#" class="btn primary" id="btn_play">
+					       				<img src="img/img_add_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					            </td>
 					            <td>consectetur</td>
 					            <td>adipiscing</td>
 					        </tr>
@@ -114,7 +137,14 @@
 									</label>
 					        	</td>
 					            <td>3</td>
-					            <td>Integer</td>
+					            <td>
+					            	<a href="#" class="btn primary" id="btn_play">
+					            		<img src="img/img_play_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					       			<a href="#" class="btn primary" id="btn_play">
+					       				<img src="img/img_add_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					            </td>
 					            <td>nec</td>
 					            <td>odio</td>
 					        </tr>

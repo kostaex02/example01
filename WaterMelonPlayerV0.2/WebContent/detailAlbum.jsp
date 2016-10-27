@@ -16,7 +16,16 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	<style>
+	#btn_play{
+		padding: 0px 0px;
+		border: 0px;
+	}
+	label{
+		margin-bottom: 0px;
+	}
+	
+	</style>
     </head>
     <body>
         <nav class="navbar-inverse" >
@@ -89,22 +98,29 @@
         					<tr>
         						<th></th>
         						<th>No</th>
-            					<th>button</th>
+            					<th></th>
             					<th>곡명</th>
 					            <th>아티스트</th>
 					        </tr>
 					    </thead>
 					    <tbody>
 					        <tr>
-					       		<td>
+					       		<td class="col-lg-0">
 					       			<label data-pg-collapsed> 
     								<input class="control-label" type="checkbox" value="">    
 									</label>
 								</td>
-					            <td>1</td>
-					            <td>Lorem</td>
-					            <td>ipsum&nbsp;<span class="label label-danger">TITLE</span></td>
-					            <td>dolor</td>
+					            <td class="col-lg-0">1</td>
+					            <td class="col-lg-2">
+					            	<a href="#" class="btn primary" id="btn_play">
+					            		<img src="img/img_play_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					       			<a href="#" class="btn primary" id="btn_play">
+					       				<img src="img/img_add_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					            </td>
+					            <td class="col-lg-3">ipsum&nbsp;<span class="label label-danger">TITLE</span></td>
+					            <td class="col-lg-8">dolor</td>
 					        </tr>
 					        <tr>
 					        	<td>
@@ -113,7 +129,14 @@
 									</label>
 					        	</td>
 					            <td>2</td>
-					            <td>amet</td>
+					            <td>
+					            	<a href="#" class="btn primary" id="btn_play">
+					            		<img src="img/img_play_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					       			<a href="#" class="btn primary" id="btn_play">
+					       				<img src="img/img_add_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					            </td>
 					            <td>consectetur</td>
 					            <td>adipiscing</td>
 					        </tr>
@@ -124,7 +147,14 @@
 									</label>
 					        	</td>
 					            <td>3</td>
-					            <td>Integer</td>
+					            <td>
+					            	<a href="#" class="btn primary" id="btn_play">
+					            		<img src="img/img_play_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					       			<a href="#" class="btn primary" id="btn_play">
+					       				<img src="img/img_add_before.png" class="pull-left" height="25px"/>
+					       			</a>
+					            </td>
 					            <td>nec</td>
 					            <td>odio</td>
 					        </tr>
@@ -139,14 +169,14 @@
                      <hr style="border-color:green">
                      <h3>리뷰</h3>
                      <div class="col-xs-6 col-lg-10" style="outline-style: none; ">
-                        	<textarea class="form-control" rows="2"></textarea>
+                        	<textarea class="form-control" rows="2" style="margin-left:10px"></textarea>
                      </div>
                      <div class="col-xs-6 col-lg-2" style="outline-style: none; ">
-                        	<button type="button" class="btn btn-default btn-lg" >등록</button>
+                        	<button type="button" class="btn btn-primary btn-lg" style="padding:12px 12px; margin-left:-10px">등록</button>
                      </div>
                      .
                      </div>
-                     <div class="row">
+                     <div class="col-xs-12 col-sm-9">
                      
                      <table class="table table-striped">
     					<tbody>
