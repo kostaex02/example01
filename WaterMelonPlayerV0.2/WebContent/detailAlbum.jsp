@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Jumbotron Template for Bootstrap</title>
+        <title>detailAlbum</title>
         <!-- Bootstrap core CSS -->
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
@@ -74,7 +74,6 @@
         <div class="container">
             <div class="row row-offcanvas ">
                 <div class="col-xs-12 col-sm-9">
-                    <p class="pull-right visible-xs"><button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>
                     <div class="row"> <!-- 행 -->
                     	<div class="col-xs-6 col-lg-4" style="margin-top: 50px; outline-style: none;"> <!-- 열 -->
                             <img src="img/1989.png" style="margin: 0px">
