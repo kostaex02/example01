@@ -3,43 +3,61 @@ package watermelon.dto;
 import java.util.Date;
 
 public class Album {
-	private String songAlbum;
-	private String songArtist;
-	private Date debutDate;
+	private int albumNo;
+	private String albumName;
+	private String albumArtist;
+	private String debutDate;
 	private String genreCode;
 	
 	public Album(){}
-	public Album(String songAlbum, String songArtist, Date debutDate, String genreCode) {
-		super();
-		this.songAlbum = songAlbum;
-		this.songArtist = songArtist;
+
+	public Album(int albumNo, String albumName, String albumArtist, String debutDate, String genreCode) {
+		this.albumNo = albumNo;
+		this.albumName = albumName;
+		this.albumArtist = albumArtist;
 		this.debutDate = debutDate;
 		this.genreCode = genreCode;
 	}
-	
-	public String getSongAlbum() {
-		return songAlbum;
+
+	public int getAlbumNo() {
+		return albumNo;
 	}
-	public void setSongAlbum(String songAlbum) {
-		this.songAlbum = songAlbum;
+
+	public void setAlbumNo(int albumNo) {
+		this.albumNo = albumNo;
 	}
-	public String getSongArtist() {
-		return songArtist;
+
+	public String getAlbumName() {
+		return albumName;
 	}
-	public void setSongArtist(String songArtist) {
-		this.songArtist = songArtist;
+
+	public void setAlbumName(String albumName) {
+		this.albumName = albumName;
 	}
-	public Date getDebutDate() {
+
+	public String getAlbumArtist() {
+		return albumArtist;
+	}
+
+	public void setAlbumArtist(String albumArtist) {
+		this.albumArtist = albumArtist;
+	}
+
+	public String getDebutDate() {
 		return debutDate;
 	}
-	public void setDebutDate(Date debutDate) {
+
+	public void setDebutDate(String debutDate) {
 		this.debutDate = debutDate;
 	}
+
 	public String getGenreCode() {
 		return genreCode;
 	}
+
 	public void setGenreCode(String genreCode) {
 		this.genreCode = genreCode;
 	}
+	
 	
 }

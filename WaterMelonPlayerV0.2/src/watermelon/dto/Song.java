@@ -1,25 +1,33 @@
 package watermelon.dto;
 
 public class Song {
+	private int songNo;
 	private String songName;
-	private String songArtist;
+	private int artistCode;
 	private String genreCode;
-	private String songAlbum;
-	private String songUrl;
-	private String songImgUrl;
+	private int albumCode;
+	private String albumImgUrl;
 	private int songTitle;
 	
 	public Song(){}
-	
-	public Song(String songName, String songArtist, String genreCode, String songAlbum, String songUrl,
-			String songImgUrl, int songTitle) {
+
+	public Song(int songNo, String songName, int artistCode, String genreCode, int albumCode, String albumImgUrl,
+			int songTitle) {
+		this.songNo = songNo;
 		this.songName = songName;
-		this.songArtist = songArtist;
+		this.artistCode = artistCode;
 		this.genreCode = genreCode;
-		this.songAlbum = songAlbum;
-		this.songUrl = songUrl;
-		this.songImgUrl = songImgUrl;
+		this.albumCode = albumCode;
+		this.albumImgUrl = albumImgUrl;
 		this.songTitle = songTitle;
+	}
+
+	public int getSongNo() {
+		return songNo;
+	}
+
+	public void setSongNo(int songNo) {
+		this.songNo = songNo;
 	}
 
 	public String getSongName() {
@@ -30,12 +38,12 @@ public class Song {
 		this.songName = songName;
 	}
 
-	public String getSongArtist() {
-		return songArtist;
+	public int getArtistCode() {
+		return artistCode;
 	}
 
-	public void setSongArtist(String songArtist) {
-		this.songArtist = songArtist;
+	public void setArtistCode(int artistCode) {
+		this.artistCode = artistCode;
 	}
 
 	public String getGenreCode() {
@@ -46,28 +54,20 @@ public class Song {
 		this.genreCode = genreCode;
 	}
 
-	public String getSongAlbum() {
-		return songAlbum;
+	public int getAlbumCode() {
+		return albumCode;
 	}
 
-	public void setSongAlbum(String songAlbum) {
-		this.songAlbum = songAlbum;
+	public void setAlbumCode(int albumCode) {
+		this.albumCode = albumCode;
 	}
 
-	public String getSongUrl() {
-		return songUrl;
+	public String getAlbumImgUrl() {
+		return albumImgUrl;
 	}
 
-	public void setSongUrl(String songUrl) {
-		this.songUrl = songUrl;
-	}
-
-	public String getSongImgUrl() {
-		return songImgUrl;
-	}
-
-	public void setSongImgUrl(String songImgUrl) {
-		this.songImgUrl = songImgUrl;
+	public void setAlbumImgUrl(String albumImgUrl) {
+		this.albumImgUrl = albumImgUrl;
 	}
 
 	public int getSongTitle() {
@@ -77,6 +77,5 @@ public class Song {
 	public void setSongTitle(int songTitle) {
 		this.songTitle = songTitle;
 	}
-	
 	
 }

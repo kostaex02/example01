@@ -26,8 +26,8 @@ public class SongDAO implements SongInterface {
 			rs = pr.executeQuery();
 
 			while (rs.next()) {
-				Song song = new Song(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6), rs.getInt(7));
+				Song song = new Song(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4),
+						rs.getInt(5), rs.getString(6), rs.getInt(7));
 				list.add(song);
 			}
 		} finally {
@@ -50,8 +50,8 @@ public class SongDAO implements SongInterface {
 			rs = pr.executeQuery();
 
 			while (rs.next()) {
-				Song song = new Song(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6), rs.getInt(7));
+				Song song = new Song(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4),
+						rs.getInt(5), rs.getString(6), rs.getInt(7));
 				list.add(song);
 			}
 		} finally {
@@ -61,7 +61,7 @@ public class SongDAO implements SongInterface {
 	}
 
 	@Override
-	public List<Song> selectSongArtist(String songArtist) throws SQLException {
+	public List<Song> selectSongArtist(int songArtist) throws SQLException {
 		List<Song> list = new ArrayList<Song>();
 		Connection con = null;
 		PreparedStatement pr = null;
@@ -69,13 +69,13 @@ public class SongDAO implements SongInterface {
 
 		try {
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("select * from song where song_artist = ?");
-			pr.setString(1, songArtist);
+			pr = con.prepareStatement("select * from song where artist_code = ?");
+			pr.setInt(1, songArtist);
 			rs = pr.executeQuery();
 
 			while (rs.next()) {
-				Song song = new Song(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6), rs.getInt(7));
+				Song song = new Song(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4),
+						rs.getInt(5), rs.getString(6), rs.getInt(7));
 				list.add(song);
 			}
 		} finally {
@@ -85,7 +85,7 @@ public class SongDAO implements SongInterface {
 	}
 
 	@Override
-	public List<Song> selectSongAlbum(String songAlbum) throws SQLException {
+	public List<Song> selectSongAlbum(int songAlbum) throws SQLException {
 		List<Song> list = new ArrayList<Song>();
 		Connection con = null;
 		PreparedStatement pr = null;
@@ -93,12 +93,12 @@ public class SongDAO implements SongInterface {
 
 		try {
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("select * from song where song_album=?");
+			pr = con.prepareStatement("select * from song where album_code=?");
 			rs = pr.executeQuery();
 
 			while (rs.next()) {
-				Song song = new Song(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6), rs.getInt(7));
+				Song song = new Song(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4),
+						rs.getInt(5), rs.getString(6), rs.getInt(7));
 				list.add(song);
 			}
 		} finally {
@@ -115,12 +115,12 @@ public class SongDAO implements SongInterface {
 		try {
 			con = DBUtil.getConnection();
 			pr = con.prepareStatement("insert into song values (?,?,?,?,?,?,?)");
-			pr.setString(1, song.getSongName());
-			pr.setString(2, song.getSongArtist());
-			pr.setString(3, song.getGenreCode());
-			pr.setString(4, song.getSongAlbum());
-			pr.setString(5, song.getSongUrl());
-			pr.setString(6, song.getSongImgUrl());
+			pr.setInt(1, song.getSongNo());
+			pr.setString(2, song.getSongName());
+			pr.setInt(3, song.getArtistCode());
+			pr.setString(4, song.getGenreCode());
+			pr.setInt(5, song.getAlbumCode());
+			pr.setString(6, song.getAlbumImgUrl());
 			pr.setInt(7, song.getSongTitle());
 			result = pr.executeUpdate();
 		} finally {
@@ -130,15 +130,15 @@ public class SongDAO implements SongInterface {
 	}
 
 	@Override
-	public int deleteSong(String songName, String songArtist) throws SQLException {
+	public int deleteSong(String songName, int songArtist) throws SQLException {
 		Connection con = null;
 		PreparedStatement pr = null;
 		int result = 0;
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("delete from song where song_name = ? and song_artist = ?");
+			pr = con.prepareStatement("delete from song where song_name = ? and artist_code = ?");
 			pr.setString(1, songName);
-			pr.setString(2, songArtist);
+			pr.setInt(2, songArtist);
 			result = pr.executeUpdate();
 		}finally{
 			DBUtil.dbClose(con, pr, null);

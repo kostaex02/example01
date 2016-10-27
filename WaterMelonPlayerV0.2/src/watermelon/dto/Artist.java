@@ -1,32 +1,50 @@
 package watermelon.dto;
 
 public class Artist {
-	private String songArtist;
-	private String gender;
-	private String artistGroup;
+	private int artistNo;
+	private String artistName;
+	private int artistGender;
+	private int artistGroup;
 	
 	public Artist(){}
-	public Artist(String songArtist, String gender, String artistGroup) {
-		this.songArtist = songArtist;
-		this.gender = gender;
+
+	public Artist(int artistNo, String artistName, int artistGender, int artistGroup) {
+		this.artistNo = artistNo;
+		this.artistName = artistName;
+		this.artistGender = artistGender;
 		this.artistGroup = artistGroup;
 	}
-	public String getSongArtist() {
-		return songArtist;
+
+	public int getArtistNo() {
+		return artistNo;
 	}
-	public void setSongArtist(String songArtist) {
-		this.songArtist = songArtist;
+
+	public void setArtistNo(int artistNo) {
+		this.artistNo = artistNo;
 	}
-	public String getGender() {
-		return gender;
+
+	public String getArtistName() {
+		return artistName;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+
+	public void setArtistName(String artistName) {
+		this.artistName = artistName;
 	}
-	public String getArtistGroup() {
+
+	public int getArtistGender() {
+		return artistGender;
+	}
+
+	public void setArtistGender(int artistGender) {
+		this.artistGender = artistGender;
+	}
+
+	public int getArtistGroup() {
 		return artistGroup;
 	}
-	public void setArtistGroup(String artistGroup) {
+
+	public void setArtistGroup(int artistGroup) {
 		this.artistGroup = artistGroup;
 	}
+	
 }

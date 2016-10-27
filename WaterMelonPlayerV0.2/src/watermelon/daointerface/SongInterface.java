@@ -19,12 +19,12 @@ public interface SongInterface {
 	/**
 	 *  가수이름 검색
 	 */
-	List<Song> selectSongArtist(String songArtist) throws SQLException;
+	List<Song> selectSongArtist(int songArtist) throws SQLException;
 	
 	/**
 	 *  앨범이름 검색
 	 */
-	List<Song> selectSongAlbum(String songAlbum) throws SQLException;
+	List<Song> selectSongAlbum(int songAlbum) throws SQLException;
 	
 	/**
 	 *  선택곡 삽입
@@ -34,7 +34,7 @@ public interface SongInterface {
 	/**
 	 *  선택곡 삭제
 	 */
-	int deleteSong(String songName, String songArtist) throws SQLException;
+	int deleteSong(String songName, int songArtist) throws SQLException;
 	
 	
 }
