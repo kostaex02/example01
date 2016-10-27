@@ -45,7 +45,7 @@ public class SongDAO implements SongInterface {
 
 		try {
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("select * from song where song_name = ?");
+			pr = con.prepareStatement("select * from song where song_name LIKE %?% ");
 			pr.setString(1, songName);
 			rs = pr.executeQuery();
 

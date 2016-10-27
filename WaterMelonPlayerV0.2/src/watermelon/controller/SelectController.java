@@ -18,13 +18,13 @@ public class SelectController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String select = request.getParameter("select");
+		String content = request.getParameter("content");
 		SelectSong service = new SelectSong();
-		
 		//select값에 따라 service의 메소드를 다르게 호출
 		if(select.equals("song")){
 			List<Song> list =service.songSelect(select);
 			request.setAttribute("list", list);
-			request.getRequestDispatcher("SerachView.jsp").forward(request, response);
+			request.getRequestDispatcher("seachSong.jsp").forward(request, response);
 		}else if(select.equals("artist")){
 			
 		}else if(select.equals("album")){
