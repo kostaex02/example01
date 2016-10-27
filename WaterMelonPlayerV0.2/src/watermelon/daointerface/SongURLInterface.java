@@ -1,5 +1,7 @@
 package watermelon.daointerface;
 
-public interface SongURLInterface {
+import watermelon.dto.SongURL;
 
+public interface SongURLInterface {
+	SongURL selectURL(int no);
 }
