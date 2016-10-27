@@ -19,7 +19,24 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	<style>
+	#btn_play{
+		padding: 0px 0px;
+		border: 0px;
+	}
+	label{
+		margin-bottom: 0px;
+	}
+	hr{
+		margin-top: 0;
+		width: 79%;
+		margin-left: 25px
+	}
+	.table{
+		width: 80%;
+	}
+	
+	</style>
 </head>
 <body>
 	<nav class="navbar-inverse">
