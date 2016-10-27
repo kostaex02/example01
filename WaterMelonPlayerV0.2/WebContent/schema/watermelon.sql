@@ -22,7 +22,7 @@ create table genre(
   genre_name varchar2(15)	-- 장르
 );
 
-create sequence artist_no_sequence nocache;
+create sequence artist_no nocache;
 
 create table artist(
 	artist_no number primary key,	-- 아티스트별 코드
@@ -33,7 +33,7 @@ create table artist(
 
 drop table artist;
 
-create sequence album_no_sequence nocache;
+create sequence album_no nocache;
 
 
 -- 여기까지
@@ -55,7 +55,7 @@ create table album_image(
 
 drop table album_image;
 
-create sequence song_no_sequence nocache;
+create sequence song_no nocache;
 
 create table song(
    song_no number primary key,
@@ -66,6 +66,8 @@ create table song(
   album_imgurl varchar2(50) references album_image(album_imgurl), --이미지 url
   song_title number default 0); 
 
+
+
 drop table song_url;
 
 create table song_url(
@@ -73,7 +75,7 @@ create table song_url(
    song_no number references song(song_no)
 );
 
-create sequence my_album_no_sequence nocache;
+create sequence my_album_no nocache;
 
 create table my_album(
      my_album_no number primary key,
@@ -87,7 +89,7 @@ create table my_album(
 
 drop table my_album;
 
-create sequence review_no_sequence nocache;
+create sequence review_no nocache;
 
 create table review(
   review_no number primary key, --리뷰 번호
@@ -100,3 +102,18 @@ drop table review;
 commit
 
 select * from user_table;
+select * from album_image;
+select * from album;
+select * from artist;
+select * from genre;
+
+insert into album_image values (1,1);
+insert into genre values (1,'Ballad');
+insert into album values (1,'Real',1,null,1);
+insert into artist values (artist_no.nextval,'아이유',1,0);
+
+insert into song values (song_no.nextval,'좋은날',1,1,1,1,1);  
+
+
+SELECT * FROM song WHERE song_name  LIKE '%좋은날%';
+

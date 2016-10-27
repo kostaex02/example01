@@ -13,6 +13,7 @@ public class SelectSong {
 	
 	public List<Song> songSelect(String content) {
 		try {
+			System.out.println(content+" : Service SelectSong까지옴" );
 			//dao 에서 얻어온 list값 list에 담기
 			list = dao.selectSongName(content);
 		} catch (SQLException e) {

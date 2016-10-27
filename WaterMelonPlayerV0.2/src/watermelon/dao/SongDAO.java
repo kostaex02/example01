@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,22 +41,25 @@ public class SongDAO implements SongInterface {
 	public List<Song> selectSongName(String songName) throws SQLException {
 		List<Song> list = new ArrayList<Song>();
 		Connection con = null;
-		PreparedStatement pr = null;
+		Statement st=null;;
 		ResultSet rs = null;
-
+		String sql = "SELECT * FROM song WHERE song_name LIKE '%"+songName.trim()+"%'" ;
+		
 		try {
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("select * from song where song_name LIKE %?% ");
-			pr.setString(1, songName);
-			rs = pr.executeQuery();
-
+			st = con.createStatement();
+			rs = st.executeQuery(sql);
+			System.out.println(songName + " : dao selectSongName 검색코앞까지옴");
 			while (rs.next()) {
+				System.out.println("검색성공");
 				Song song = new Song(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4),
 						rs.getInt(5), rs.getString(6), rs.getInt(7));
 				list.add(song);
 			}
+			
+			
 		} finally {
-			DBUtil.dbClose(con, pr, rs);
+			DBUtil.dbClose(con, st, rs);
 		}
 		return list;
 	}
