@@ -21,10 +21,20 @@ $(function() {
 	$("#myPage").click(function() {
 		location.href="myPage";
 	})
+	
+	$("#logout").click(function() {
+		location.href="logout";
+	})
 })
 </script>
 </head>
 <body>
+<%	if (session.getAttribute("User")==null) {
+	out.println("<script>");
+	out.println("alert('로그인후 사용하세요.')");
+	out.println("location.href='index.jsp'");
+	out.println("</script>");
+	}%>
  <nav class="navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
@@ -60,7 +70,7 @@ $(function() {
                         <div class="form-group" style="color:red; margin-left:100px">
                         	&nbsp; &nbsp; ${User.userName}님 환영합니다. &nbsp; &nbsp;
                         </div>
-                        	<input type="button" class="btn btn-info btn-sm" value="로그아웃">
+                        	<input type="button" class="btn btn-info btn-sm" id= "logout"value="로그아웃">
                             <input type="button" class="btn btn-info btn-sm" id ="myPage" value="마이페이지">
                     </form>
                 </div>
