@@ -9,9 +9,9 @@ public class MyAlbum {
 	private String songUrl;
 	private String imgUrl;
 	
+	public MyAlbum(){}
 	public MyAlbum(int myAlbumNo, String userId, String songName, String artistName, String albumName, String songUrl,
 			String imgUrl) {
-		super();
 		this.myAlbumNo = myAlbumNo;
 		this.userId = userId;
 		this.songName = songName;
