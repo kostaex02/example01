@@ -28,7 +28,7 @@ public interface UserInterface {
 	/**
 	 * 유저 수정
 	 */
-	int updateUser(String userPassword) throws SQLException;
+	int updateUser(String userPassword, String id) throws SQLException;
 	
 	/**
 	 * 유저 추가

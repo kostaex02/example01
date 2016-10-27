@@ -8,11 +8,11 @@ import watermelon.dto.Album;
 import watermelon.dto.User;
 
 public class UserService {
-	UserDAO dao = new UserDAO();
-	User user = new User();
-	public String login(String email, String pwd) {
+	static UserDAO dao = new UserDAO();
+	
+	public static String login(String email, String pwd) {
 	 	try {
-	 		user = dao.loginUser(email,pwd);
+	 		User user  = dao.loginUser(email,pwd);
 			String userName = user.getUserName();
 			return userName;
 		} catch (SQLException e) {
@@ -22,7 +22,7 @@ public class UserService {
 	 	return null;
 	}
 	
-	public boolean insert(User user){
+	public static boolean insert(User user){
 		try {
 			int i = dao.insertUser(user);
 			if(i>0){
@@ -45,7 +45,21 @@ public class UserService {
 	
 	//비밀번호 확인후 일치할경우 비밀번호를 새로운 비밀번호로 변경
 	public static boolean pwdChange(String id, String oldPwd, String newPwd) {
-		
-		return true;
+		User user;
+		try {
+			user = dao.loginUser(id, oldPwd);
+			System.out.println("user리턴 : "+user);
+			if (user!=null) {
+				System.out.println("유저서비스");
+				int i = dao.updateUser(newPwd, id);
+				System.out.println("업데이트 리턴 : "+i);
+				if (i>0) {
+					return true;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 }

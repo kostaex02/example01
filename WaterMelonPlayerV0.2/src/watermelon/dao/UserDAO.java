@@ -73,14 +73,15 @@ public class UserDAO implements UserInterface {
 	}
 
 	@Override
-	public int updateUser(String userPassword) throws SQLException {
+	public int updateUser(String userPassword, String id) throws SQLException {
 		int result = 0;
 		Connection con = null;
 		PreparedStatement pr = null;
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("update user_table set user_password = ?");
+			pr = con.prepareStatement("update user_table set user_password = ? where user_id=?");
 			pr.setString(1, userPassword);
+			pr.setString(2, id);
 			result = pr.executeUpdate();
 		}finally{
 			DBUtil.dbClose(con, pr, null);
