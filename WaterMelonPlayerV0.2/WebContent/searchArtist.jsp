@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0. user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>main</title>
+        <title>Artist</title>
         <!-- Bootstrap core CSS -->
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
@@ -18,7 +18,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-<title>Insert title here</title>
+
 </head>
 <body>
 <nav class="navbar-inverse" >
@@ -34,11 +34,11 @@
         				<img alt="Brand" src="img/waterMelon.png" width="130px" style="margin-top:-7px">
       				</a>
                 </div>
-                <span id="navbar" class="navbar-collapse collapse" style="padding-left: 24%">
+                <div id="navbar" class="navbar-collapse collapse" style="margin-left: 27%">
                     <form class="navbar-form">
                     <div class="col">
                        <div class="col-lg-4">
-  						  <div class="input-group">
+  						  <div class="input-group" align="right" style="margin-right: -11px">
     						<div class="input-group-btn">
      							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">곡명<span class="caret"></span></button>
       								<ul class="dropdown-menu" role="menu">
@@ -52,22 +52,22 @@
 						</div><!-- /.col-lg-4 -->
 					</div>
                         <button type="submit" class="btn btn-success">검색</button>
-                        
-                        
-                        <span class="form-group" style="color:red; margin-left: 14%">김김김님 환영합니다.</span>
+					<div style="display: inline;">
+                        <span class="form-group" style="color:red; margin-left: 32mm">김김김님 환영합니다.</span>
                         	<input type="button" class="btn btn-info btn-sm" value="회원정보변경" style="margin-left: 5px">
                             <input type="button" class="btn btn-info btn-sm" value="로그아웃" style="margin-right: 10px">
+					</div>
                     </form>
-                </span>
+                </div>
                 
                 <!-- /.nav-collapse -->
             </div>
         </nav>
 
-<div class="container-fluid" style="margin-right:120px; margin-left:120px">
-    <h1 class="page-header">가수 검색 결과</h1>
+<div class="container" style="margin-right:120px; margin-left:120px">
+    <h1 class="page-header" style="margin: 80px 20px 50px">artist 검색 결과</h1>
     <div class="row placeholders">
-        <div class="col-xs-6 col-sm-3 placeholder">
+        <div class="col-xs-6 col-sm-3 placeholder" style="margin: 0px 30px 0px">
             <img src="http://pinegrow.com/placeholders/img4.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
         </div>
         <div class="col-sm-3" style="margin:21px">
@@ -78,7 +78,7 @@
             <p><b>장르</b> <span>&nbsp받아올 앨범</span>
         </div>
     </div>
-    <h2 class="sub-header">곡</h2>
+    <h2 class="sub-header" style="margin: 80px 20px 20px">곡</h2>
     <div class="table-responsive">
         <table class="table table-striped">
     <thead>
@@ -215,7 +215,6 @@
         <script src="bootstrap/js/jquery-2.2.4.js"></script>
         <script src="bootstrap/js/bootstrap.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
         <script>
         $(document).ready(function () {
             $('[data-toggle="test"]').click(function () {
