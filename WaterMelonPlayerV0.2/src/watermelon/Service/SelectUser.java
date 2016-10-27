@@ -13,7 +13,6 @@ public class SelectUser {
 	 		//10.26수정-로그인후 리턴하는 값을 유저이름에서 user객체로 변경.
 	 		return dao.loginUser(email,pwd);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	 	return null;
