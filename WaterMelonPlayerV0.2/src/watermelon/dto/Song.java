@@ -11,6 +11,38 @@ public class Song {
 	private String aristName;
 	private String albumName;
 	
+	//플레이리스트를 위한 인수값 DB에는 저장 불필요.
+	private int isPlay;
+	private int isChecked;
+	private String url;
+	public int getIsChecked() {
+		return isChecked;
+	}
+	public void setIsChecked(int isChecked) {
+		this.isChecked = isChecked;
+	}
+	public int getIsPlay() {
+		return isPlay;
+	}
+	public void setIsPlay(int isPlay) {
+		this.isPlay = isPlay;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public Song(String songName, String aristName, String albumImgUrl,
+			String url, int isPlay, int isChecked) {
+		this.songName = songName;
+		this.aristName = aristName;
+		this.albumImgUrl = albumImgUrl;
+		this.url = url;
+		this.isPlay = isPlay;
+		this.isChecked = isChecked;
+	}
+	
 	
 	public Song(){}
 
