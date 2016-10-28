@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import watermelon.Service.UserService;
-import watermelon.dto.Album;
+import watermelon.dto.MyAlbum;
 import watermelon.dto.User;
 
 @SuppressWarnings("serial")
@@ -30,7 +30,7 @@ public class MyPageServlet extends HttpServlet {
 		//받아온 유저정보로 유저의 앨범검색
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("User");
-		List<Album> albums = UserService.getMyalbum(user.getUserId());
+		List<MyAlbum> albums = UserService.getMyalbum(user.getUserId());
 		session.setAttribute("myAlbum", albums);
 		request.getRequestDispatcher("myPageAlbum.jsp").forward(request, response);
 	}

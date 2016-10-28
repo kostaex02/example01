@@ -9,12 +9,15 @@ import java.util.List;
 
 import watermelon.daointerface.MyAlbumInterface;
 import watermelon.dto.MyAlbum;
-import watermelon.dto.Song;
 import watermelon.util.DBUtil;
 
 public class MyAlbumDAO implements MyAlbumInterface {
+	ArtistDAO artistDAOdao = new ArtistDAO();
+	AlbumDAO albumDAO =  new AlbumDAO();
+	
 	@Override
 	public List<MyAlbum> getMyAlbum(String id) throws SQLException {
+		
 		List<MyAlbum> list = new ArrayList<>();
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -25,8 +28,8 @@ public class MyAlbumDAO implements MyAlbumInterface {
 		resultSet = statement.executeQuery();
 		while (resultSet.next()) {
 			MyAlbum album = new MyAlbum(resultSet.getInt(1), resultSet.getString(2),
-					resultSet.getString(3), resultSet.getString(4), resultSet.getString(5),
-					resultSet.getString(6), resultSet.getString(7));
+					resultSet.getString(3), artistDAOdao.selectArtist(resultSet.getInt(4)),
+					albumDAO.selectAlbum(resultSet.getInt(5)), resultSet.getString(6), resultSet.getString(7));
 			list.add(album);
 		}
 		return list;
