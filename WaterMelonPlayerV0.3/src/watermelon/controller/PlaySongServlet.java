@@ -19,7 +19,7 @@ import watermelon.dto.Song;
 public class PlaySongServlet extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SelectSong selectSong = new SelectSong();
 		String songNo = request.getParameter("song_no");
@@ -27,15 +27,10 @@ public class PlaySongServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("list")!=null) {
 			songs = (ArrayList<Song>) session.getAttribute("list");
-		} 
+		}
 		songs = (ArrayList<Song>) selectSong.getPlaylist(songNo);
 		session.setAttribute("list", songs);
 		PrintWriter out = response.getWriter();
-		String str="";
-		str = "<script language='javascript'>";
-		str += "window.open('view/player.jsp','player', 'width=700, height=500, scrollbars= 0, toolbar=0, menubar=no, resizable=no')";
-		str += "</script>";
-		out.print(str);
+		out.println("go!");
 	}
-	
 }

@@ -88,8 +88,8 @@ p { clear: both; }
 	display: none;
 }
 </style>
-<script src="../jquery-2.2.4.js"></script>
-<script src="../lib/audio.min.js"></script>
+<script src="../bootstrap/js/jquery-2.2.4.js"></script>
+<script src="../bootstrap/js/audio.min.js"></script>
 <script type="text/javascript">
 $(function() { 
 	var state = 0;
@@ -378,8 +378,6 @@ $(function() {
 		audio.play();
 		$("#songName").load()
 		showInfo()
-		$("#pauseBTN").css("display", "inline").addClass("waaagh")
-		$("#playBTN").css("display", "none")
 	}
 	//다음곡
 	function nextSong() {
@@ -413,7 +411,8 @@ $(function() {
 		    });
 		  });
 		};
-	
+	$("#pauseBTN").css("display", "inline").addClass("waaagh")
+	$("#playBTN").css("display", "none")
 	audio.setVolume(0.5)
 	loadList()
 	rangeSlider();

@@ -26,6 +26,7 @@ public class MyPageServlet extends HttpServlet {
 		List<MyAlbum> albums = UserService.getMyalbum(user.getUserId());
 		session.setAttribute("myAlbum", albums);
 		request.getRequestDispatcher("myPageAlbum.jsp").forward(request, response);
+		
 	}
 
 	@Override

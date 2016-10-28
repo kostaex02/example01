@@ -34,7 +34,18 @@
 	<script>
 	$(function() {
 		$(document).on("click", "#btn_play", function() {
-			location.href="playsong?song_no="+$("#btn_play").attr("name")
+			$.ajax({
+				type:"post",
+				url:"playsong",
+				data:"song_no="+$("#btn_play").attr("name"),
+				dataType:"text",
+				success:function(result) {
+					window.open('view/player.jsp','player', 'width=700, height=500, scrollbars= 0, toolbar=0, menubar=no, resizable=no')
+				},
+				error:function() {
+					alert("showInfo 오류남!")
+				}
+			})
 		})
 	})
 	</script>
