@@ -34,7 +34,7 @@
 	<script>
 	$(function() {
 		$(document).on("click", "#btn_play", function() {
-			location.href="myPage?song_no="+$("#btn_play").attr("name")
+			location.href="playsong?song_no="+$("#btn_play").attr("name")
 		})
 	})
 	</script>
