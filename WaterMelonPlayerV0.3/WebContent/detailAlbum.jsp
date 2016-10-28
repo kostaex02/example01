@@ -216,7 +216,7 @@
                      <h3>리뷰</h3>
                      <form name="contentsForm" method="post" id="contentsForm">
                      <div class="Col-lg-1">
-                     	<h3 style="visiability:hidden">hidden</h3>
+                     	<input type="hidden" name="id" value=${User.userId }>
                      </div>
                      <div class="col-xs-6 col-lg-9" style="outline-style: none; ">
                      	<textarea class="form-control" rows="2" style="margin-left:10px" id="contents"></textarea>

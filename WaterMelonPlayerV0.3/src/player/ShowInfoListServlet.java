@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dto.Song;
 import net.sf.json.JSONArray;
+import watermelon.dto.Song;
 
 @SuppressWarnings("serial")
 @WebServlet("/showInfoListServlet")
@@ -31,7 +31,7 @@ public class ShowInfoListServlet extends HttpServlet {
 		//리스트 내에서 해당 url과 같은 객체값찾기
 		ArrayList<Song> data = new ArrayList<>();
 		for (int i = 0; i < list.size(); i++) {
-			String urlList = list.get(i).getSongUrl();
+			String urlList = list.get(i).getUrl();
 			if (urlList.equals(url)) {
 				data.add(list.get(i));
 				break;

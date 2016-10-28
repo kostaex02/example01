@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dto.Song;
 import net.sf.json.JSONArray;
+import watermelon.dto.Song;
 
 @SuppressWarnings("serial")
 @WebServlet("/loadListServlet")
