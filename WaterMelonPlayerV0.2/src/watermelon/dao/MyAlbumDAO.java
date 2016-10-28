@@ -26,10 +26,11 @@ public class MyAlbumDAO implements MyAlbumInterface {
 		statement = connection.prepareStatement("SELECT * FROM MY_ALBUM WHERE USER_ID = ?");
 		statement.setString(1, id);
 		resultSet = statement.executeQuery();
+		
 		while (resultSet.next()) {
 			MyAlbum album = new MyAlbum(resultSet.getInt(1), resultSet.getString(2),
-					resultSet.getString(3), artistDAOdao.selectArtist(resultSet.getInt(4)),
-					albumDAO.selectAlbum(resultSet.getInt(5)), resultSet.getString(6), resultSet.getString(7));
+					resultSet.getString(3), artistDAOdao.selectArtistName(resultSet.getInt(4)),
+					albumDAO.selectAlbumName(resultSet.getInt(5)), resultSet.getString(6), resultSet.getString(7));
 			list.add(album);
 		}
 		return list;
