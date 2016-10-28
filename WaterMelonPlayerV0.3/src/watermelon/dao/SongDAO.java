@@ -13,6 +13,7 @@ import watermelon.dto.Song;
 import watermelon.util.DBUtil;
 
 public class SongDAO implements SongInterface {
+	ArtistDAO artistDAO = new ArtistDAO();
 
 	@Override
 	public List<Song> selectSongAll() throws SQLException {
@@ -148,5 +149,26 @@ public class SongDAO implements SongInterface {
 		}
 		return result;
 	}
-
+	
+	public Song getPlaylist(String songNo) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		String sql = "SELECT D.SONG_NAME, D.ARTIST_CODE, D.ALBUM_IMGURL, E.SONG_URL  FROM SONG D join SONG_URL E ON D.SONG_NO=E.SONG_NO where D.SONG_NO = ?";
+		try {
+			connection = DBUtil.getConnection();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, Integer.parseInt(songNo));
+			resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				return new Song(resultSet.getString(1), artistDAO.selectArtistName(resultSet.getInt(2)),
+						resultSet.getString(3), resultSet.getString(4), 0, 0);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+		}
+		return null;
+	}
 }

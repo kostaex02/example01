@@ -21,11 +21,23 @@
 		padding:0px 0px;
 		border:0px;
 	}
+	#btn_del{
+		padding:0px 0px;
+		border:0px;
+	}
 	label{
 		margin-bottom: 0px;
 	}
 	
 	</style>
+	<script src="bootstrap/js/jquery-2.2.4.min.js"></script>
+	<script>
+	$(function() {
+		$(document).on("click", "#btn_play", function() {
+			location.href="myPage?song_no="+$("#btn_play").attr("name")
+		})
+	})
+	</script>
 	</head>
     <body>
         <nav class="navbar-inverse">
@@ -84,29 +96,24 @@
 					<h1 class="page-header">마이앨범</h1>
 					<div class="table-responsive">
 						<table class="table table-striped">
-    					<thead>
-        					<tr>
-        						<th></th>
-        						<th>No</th>
-            					<th></th>
-            					<th>곡명</th>
+	       					<tr>
+	       						<th></th>
+	       						<th>No</th>
+	           					<th></th>
+	           					<th>곡명</th>
 					            <th>아티스트</th>
 					        </tr>
-					    </thead>
-					    <tbody>
 					        <tr>
 					       		<td class="col-lg-0">
-					       			<label data-pg-collapsed> 
-    								<input class="control-label" type="checkbox" value="" align="center">  
-									</label>
+					       			<label data-pg-collapsed><input class="control-label" type="checkbox" value="" align="center"></label>
 								</td>
 					            <td class="col-lg-0">1</td>
 					            <td class="col-lg-1">
-					            	<a href="#" class="btn primary" id="btn_play">
+					            	<a href="#" class="btn primary" id="btn_play" name="1">
 					            		<img src="img/img_play_before.png" class="pull-left" height="25px"/>
 					       			</a>
 					       			<a href="#" class="btn primary" id="btn_play">
-					       				<img src="img/img_add_before.png" class="pull-left" height="25px"/>
+					       				<img src="img/img_add_after.png" class="pull-left" height="25px"/>
 					       			</a>
 					            </td>
 					            <td class="col-lg-3">ipsum</td>

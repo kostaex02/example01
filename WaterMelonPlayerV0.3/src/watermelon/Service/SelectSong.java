@@ -22,7 +22,16 @@ public class SelectSong {
 		//담은 값 리턴
 		return list;
 	}
-	
+	/**
+	 * 곡번호로 해당 곡의 곡이름, 아티스트, 곡URL, 앨범URL을 가져온다.
+	 * @param songNo(곡번호)
+	 * @return 찾아온 Song객체들의 ArrayList
+	 */
+	public List<Song> getPlaylist(String songNo) {
+		List<Song> list = new ArrayList<>();
+				list.add(dao.getPlaylist(songNo));
+		return list;
+	}
 	
 }
 
