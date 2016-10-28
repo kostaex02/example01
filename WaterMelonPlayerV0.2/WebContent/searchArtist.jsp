@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@	taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@	taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,24 +21,26 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<style>
-	#btn_play{
-		padding: 0px 0px;
-		border: 0px;
-	}
-	label{
-		margin-bottom: 0px;
-	}
-	hr{
-		margin-top: 0;
-		width: 79%;
-		margin-left: 25px
-	}
-	.table{
-		width: 80%;
-	}
-	
-	</style>
+<style>
+#btn_play {
+	padding: 0px 0px;
+	border: 0px;
+}
+
+label {
+	margin-bottom: 0px;
+}
+
+hr {
+	margin-top: 0;
+	width: 79%;
+	margin-left: 25px
+}
+
+.table {
+	width: 80%;
+}
+</style>
 </head>
 <body>
 	<nav class="navbar-inverse">
@@ -79,7 +83,7 @@
 					</div>
 					<button type="submit" class="btn btn-success">검색</button>
 					<div style="display: inline;">
-						<span class="form-group" style="color: red; margin-left: 32mm">김김김님
+						<span class="form-group" style="color: red; margin-left: 32mm">${User.userName}님
 							환영합니다.</span> <input type="button" class="btn btn-info btn-sm"
 							value="회원정보변경" style="margin-left: 5px"> <input
 							type="button" class="btn btn-info btn-sm" value="로그아웃"
@@ -111,10 +115,11 @@
 				<span id="artist">댄스/발라드</span><br>
 			</div>
 		</div>
+		<%int i = 0;%>
 		<h3
 			style="margin: 20mm 20px 20px; display: inline-table; margin-right: 0px; font-size: 21px">곡</h3>
 		<span class="badge"
-			style="background-color: green; font-size: medium;">3</span>
+			style="background-color: green; font-size: medium;"><%=++i %></span>
 		<hr style="border-color: green">
 		<!--/row-->
 		<div class="row" style="margin: 0 5px 0">
@@ -130,58 +135,23 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td class="col-lg-0">
-							<label data-pg-collapsed> 
-							<input class="control-label" type="checkbox" value="">
-							</label>
-						</td>
-						<td class="col-lg-0">1</td>
-						<td class="col-lg-2">
-							<a href="#" class="btn primary"	id="btn_play"> 
-								<img src="img/img_play_before.png" class="pull-left" height="25px" />
-							</a> 
-							<a href="#" class="btn primary" id="btn_play"> 
-								<img src="img/img_add_before.png" class="pull-left" height="25px" />
-							</a>
-						</td>
-						<td class="col-lg-3">ipsum&nbsp;<span class="label label-danger">TITLE</span></td>
-						<td class="col-lg-5">ipsum</td>
-						<td class="col-lg-9">dolor</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>No</td>
-						<td></td>
-						<td>곡명</td>
-						<td>아티스트</td>
-						<td>앨범</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>No</td>
-						<td></td>
-						<td>곡명</td>
-						<td>아티스트</td>
-						<td>앨범</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>No</td>
-						<td></td>
-						<td>곡명</td>
-						<td>아티스트</td>
-						<td>앨범</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>No</td>
-						<td></td>
-						<td>곡명</td>
-						<td>아티스트</td>
-						<td>앨범</td>
-					</tr>
 					
+					<c:forEach var="artist" items="${list}">
+						<tr>
+							<td class="col-lg-0"><label data-pg-collapsed> <input
+									class="control-label" type="checkbox" value=""></label></td>
+							<td class="col-lg-0"><%=i%></td>
+							<td class="col-lg-2"><a href="#" class="btn primary"
+								id="btn_play"> <img src="img/img_play_before.png"
+									class="pull-left" height="25px" /></a> <a href="#"
+								class="btn primary" id="btn_play"> <img
+									src="img/img_add_before.png" class="pull-left" height="25px" />
+							</a></td> 
+							<td class="col-lg-3">${artist.artistName} <span class="label label-danger">TITLE</span></td>
+							<td class="col-lg-5">${artist.artistGender}</td>
+							<td class="col-lg-9">${artist.artistGroup}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>

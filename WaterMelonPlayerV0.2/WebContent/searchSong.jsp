@@ -66,7 +66,7 @@
 					</div>
 					<button type="submit" class="btn btn-success">검색</button>
 					<div style="display: inline;">
-						<span class="form-group" style="color: red; margin-left: 32mm">김김김님
+						<span class="form-group" style="color: red; margin-left: 32mm">${User.userName}님
 							환영합니다.</span> <input type="button" class="btn btn-info btn-sm"
 							value="회원정보변경" style="margin-left: 5px"> <input
 							type="button" class="btn btn-info btn-sm" value="로그아웃"
@@ -93,7 +93,7 @@
 						<td>앨범</td>
 						
 					</tr>
-					<c:forEach var="song" items="${list }">
+					<c:forEach var="song" items="${list}">
 						<tr>
 							<td>${song.songName}</td>
 							<td>${song.aristName}</td>
