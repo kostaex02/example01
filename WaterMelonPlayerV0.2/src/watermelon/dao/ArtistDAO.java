@@ -20,13 +20,15 @@ public class ArtistDAO {
 			con = DBUtil.getConnection();
 			st = con.createStatement();
 			rs = st.executeQuery(sql);
-			artist = rs.getString(1);	
+			while(rs.next()){
+				artist = rs.getString(1);
+			}
 		}catch(SQLException e){
 			e.getStackTrace();
 		}finally {
 			DBUtil.dbClose(con, st, rs);
 		}
-	
+
 		return artist ;
 	}
 }

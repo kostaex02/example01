@@ -23,11 +23,8 @@ public class SelectController extends HttpServlet {
 		//select값에 따라 service의 메소드를 다르게 호출
 		if(select.equals("song")){
 			List<Song> list =service.songSelect(content);
-			System.out.println(list);
-			System.out.println(content+" : selectcontroller 로옴");
-			System.out.println(select+" : selectcontroller 로옴");
 			request.setAttribute("list", list);
-			request.getRequestDispatcher("seachSong.jsp").forward(request, response);
+			request.getRequestDispatcher("searchSong.jsp").forward(request, response);
 		}else if(select.equals("artist")){
 			
 		}else if(select.equals("album")){

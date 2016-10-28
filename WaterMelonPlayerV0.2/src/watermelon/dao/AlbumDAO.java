@@ -9,6 +9,7 @@ import watermelon.util.DBUtil;
 
 public class AlbumDAO {
 	public String selectAlbum(int AlbumNo){
+		System.out.println("AlbumDAOÀÇ "+AlbumNo);
 		Connection con=null;
 		Statement st = null;
 		ResultSet rs=null;
@@ -18,7 +19,10 @@ public class AlbumDAO {
 			con = DBUtil.getConnection();
 			st = con.createStatement();
 			rs = st.executeQuery(sql);
-			AlbumName = rs.getString(1);	
+			while(rs.next()){
+				AlbumName = rs.getString(1);
+				System.out.println("AlbumName : "+AlbumName);
+			}
 		}catch(SQLException e){
 			e.getStackTrace();
 		}finally {

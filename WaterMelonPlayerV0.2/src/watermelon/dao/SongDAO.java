@@ -20,16 +20,16 @@ public class SongDAO implements SongInterface {
 		Connection con = null;
 		PreparedStatement pr = null;
 		ResultSet rs = null;
-		ArtistDAO artistDao =new ArtistDAO();
-		AlbumDAO albumDao = new AlbumDAO(); 
+		
 		try {
 			con = DBUtil.getConnection();
 			pr = con.prepareStatement("select * from song");
 			rs = pr.executeQuery();
-			
 			while (rs.next()) {
+				
 				Song song = new Song(rs.getInt(1), rs.getString(2),rs.getInt(3), rs.getString(4),
-						rs.getInt(5), rs.getString(6), rs.getInt(7),artistDao.selectArtist(rs.getInt(3)),albumDao.selectAlbum(rs.getInt(5)));
+						rs.getInt(5), rs.getString(6), rs.getInt(7));
+				
 				list.add(song);
 			}
 		} finally {
@@ -50,15 +50,13 @@ public class SongDAO implements SongInterface {
 			con = DBUtil.getConnection();
 			st = con.createStatement();
 			rs = st.executeQuery(sql);
-			System.out.println(songName + " : dao selectSongName 검색코앞까지옴");
+			ArtistDAO artistDao =new ArtistDAO();
+			AlbumDAO albumDao = new AlbumDAO();
 			while (rs.next()) {
-				System.out.println("검색성공");
 				Song song = new Song(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4),
-						rs.getInt(5), rs.getString(6), rs.getInt(7));
+						rs.getInt(5), rs.getString(6), rs.getInt(7),artistDao.selectArtist(rs.getInt(3)),albumDao.selectAlbum(rs.getInt(5)));
 				list.add(song);
-			}
-			
-			
+			}	
 		} finally {
 			DBUtil.dbClose(con, st, rs);
 		}

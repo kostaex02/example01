@@ -97,7 +97,7 @@
 						<tr>
 							<td>${song.songName}</td>
 							<td>${song.aristName}</td>
-							<td>${song.AlbumName}</td>
+							<td>${song.albumName}</td>
 						</tr>		
 					</c:forEach>
 			</table>
