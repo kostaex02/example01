@@ -1,0 +1,17 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+#contents{
+	width:80%;
+	display:table-cell
+}
+.logo-wrapper img{
+	max-width:100%
+}
+.logo-wrapper{
+	width:20%;
+	display: table-cell;
+}
+
+#artist{
+	font-size: 24px; 
+	margin-left: 30px;
+}
