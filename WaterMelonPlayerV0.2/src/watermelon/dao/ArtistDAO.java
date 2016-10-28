@@ -40,13 +40,21 @@ public class ArtistDAO {
 		Connection con=null;
 		Statement st = null;
 		ResultSet rs=null;
-		String sql = "select * from album where ALBUM_NAME like '%"+content+"%'";
+		String sql = "select * from artist where artist_NAME like '%"+content+"%'";
 		List<Artist> list = new ArrayList<>();
 		
 		try {
 			con = DBUtil.getConnection();
 			st = con.createStatement();
 			rs = st.executeQuery(sql);
+				
+			/*
+			artist_no number primary key,	-- 아티스트별 코드
+			artist_name varchar2(25) not null, -- 아티스트 이름
+			artist_gender number, 	--아티스트 성별 남 0 여 1
+			artist_group number	-- 아티스트 그룹 구분
+			*/
+				
 			while(rs.next()){
 				list.add(new Artist(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getInt(4)));	
 			}

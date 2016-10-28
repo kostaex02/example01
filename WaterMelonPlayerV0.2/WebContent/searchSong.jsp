@@ -85,21 +85,41 @@
 		<h2 class="sub-header" style="margin: 80px 20px 20px">곡</h2>
 		<div class="table-responsive">
 			<table class="table table-striped">
+				<%
+					int i = 0;
+				%>
+				<h3
+					style="margin: 20mm 20px 20px; display: inline-table; margin-right: 0px; font-size: 21px">곡</h3>
+				<span class="badge"
+					style="background-color: green; font-size: medium;"><%=++i%></span>
+				<hr style="border-color: green">
 				<thead>
 				</thead>
-					<tr>
-						<td>곡이름</td>
-						<td>아티스트</td>
-						<td>앨범</td>
-						
-					</tr>
-					<c:forEach var="song" items="${list}">
-						<tr>
-							<td>${song.songName}</td>
-							<td>${song.aristName}</td>
-							<td>${song.albumName}</td>
-						</tr>		
-					</c:forEach>
+				<tr>
+					<td></td>
+					<td>no</td>
+					<td></td>
+					<td>곡이름</td>
+					<td>아티스트</td>
+					<td>앨범</td>
+
+				</tr>
+				<c:forEach var="song" items="${list}">
+					<td class="col-lg-0"><label data-pg-collapsed> <input
+							class="control-label" type="checkbox" value=""></label></td>
+					<td class="col-lg-0"><%=i%></td>
+					<td class="col-lg-2"><a href="#" class="btn primary"
+						id="btn_play"> <img src="img/img_play_before.png"
+							class="pull-left" height="25px" /></a> <a href="#"
+						class="btn primary" id="btn_play"> <img
+							src="img/img_add_before.png" class="pull-left" height="25px" />
+					</a></td>
+					<td class="col-lg-3">${song.songName}<span
+						class="label label-danger">TITLE</span></td>
+					<td class="col-lg-5">${song.aristName}</td>
+					<td class="col-lg-9">${song.albumName}</td>
+
+				</c:forEach>
 			</table>
 		</div>
 	</div>
