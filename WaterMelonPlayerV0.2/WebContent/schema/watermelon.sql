@@ -38,6 +38,7 @@ create table artist_image(
   artist_imgurl varchar2(50) primary key,
   artist_no number references artist(artist_no)
 );
+
 drop table artist_image;
 
 create sequence album_no_sequence nocache;
