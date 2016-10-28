@@ -20,11 +20,13 @@ public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	SelectUser service = new SelectUser();
    	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");
+		System.out.println("µµÂø");
+   		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
 		User user = service.login(email, pwd);
 		HttpSession session = request.getSession();
 		session.setAttribute("User", user);
+		System.out.println("µµÂø");
 		request.getRequestDispatcher("main.jsp").forward(request, response);
 	}
 

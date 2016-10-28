@@ -96,8 +96,8 @@
 					<c:forEach var="song" items="${list }">
 						<tr>
 							<td>${song.songName}</td>
-							<td>${song.albumCode}</td>
-							<td>${song.albumImgUrl}</td>
+							<td>${song.aristName}</td>
+							<td>${song.AlbumName}</td>
 						</tr>		
 					</c:forEach>
 			</table>

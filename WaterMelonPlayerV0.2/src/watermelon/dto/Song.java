@@ -8,6 +8,9 @@ public class Song {
 	private int albumCode;
 	private String albumImgUrl;
 	private int songTitle;
+	private String aristName;
+	private String albumName;
+	
 	
 	public Song(){}
 
@@ -20,6 +23,35 @@ public class Song {
 		this.albumCode = albumCode;
 		this.albumImgUrl = albumImgUrl;
 		this.songTitle = songTitle;
+	}
+	public Song(int songNo, String songName, int artistCode, String genreCode, int albumCode, String albumImgUrl,
+			int songTitle, String aristName, String albumName) {
+		this.songNo = songNo;
+		this.songName = songName;
+		this.artistCode = artistCode;
+		this.genreCode = genreCode;
+		this.albumCode = albumCode;
+		this.albumImgUrl = albumImgUrl;
+		this.songTitle = songTitle;
+		this.aristName = aristName;
+		this.albumName = albumName;
+	}
+	
+
+	public String getAristName() {
+		return aristName;
+	}
+
+	public void setAristName(String aristName) {
+		this.aristName = aristName;
+	}
+
+	public String getAlbumName() {
+		return albumName;
+	}
+
+	public void setAlbumName(String albumName) {
+		this.albumName = albumName;
 	}
 
 	public int getSongNo() {
