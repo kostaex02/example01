@@ -7,7 +7,7 @@ import java.util.List;
 import watermelon.dao.ReviewDAO;
 import watermelon.dto.Review;
 
-public class SongService {
+public class ReviewService {
 	/**
 	 * 
 	 */

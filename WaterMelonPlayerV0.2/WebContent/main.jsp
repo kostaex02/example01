@@ -96,7 +96,7 @@ $(function() {
                     <p class="pull-right visible-xs"><button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button></p>
                     <div class="row">
                         <div class="col-xs-6 col-lg-4">
-                            <a href="#" class="thumbnail"> 
+                            <a href="detailAlbum.jsp" class="thumbnail"> 
                                 <img src="img/1989.png" alt=""> 
                             </a>
                             <h3 class="text-center">가수</h3>

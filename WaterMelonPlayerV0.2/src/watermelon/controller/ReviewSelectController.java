@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONArray;
-import watermelon.Service.SongService;
+import watermelon.Service.ReviewService;
 import watermelon.dto.Review;
 
 /**
@@ -37,7 +37,7 @@ public class ReviewSelectController extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		List<Review> list = new ArrayList<>();
-		list = SongService.selectReviewAll();
+		list = ReviewService.selectReviewAll();
 		
 		JSONArray jsonArr = JSONArray.fromObject(list);
 		

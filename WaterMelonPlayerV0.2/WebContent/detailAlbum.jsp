@@ -29,6 +29,26 @@
 	</style>
 	<script>
 	$(function(){
+		$("#btnRegister").click(function(){
+			  $.ajax({
+				  url:"ReviewInsert",
+				  type:"post",
+				  data:"id=" + $("#id").val(),
+				  dataType:"text",
+				  success:function(result){
+					  if(result>0){
+						  //모든 텍스트박스를 지운다.
+						  alert("성공!");
+						  $("input[type=text]").val("");
+						  //모든 레코드 검색
+						  selectAll();
+					  }else{
+						  alert("실패");
+					  }
+				  }
+			  })
+		  })
+		
 		function selectReviewAll(){
 			$.ajax({
 				url:"ReviewSelect",
@@ -88,7 +108,7 @@
                         <button type="submit" class="btn btn-success">검색</button>
                         
                         
-                        <span class="form-group" style="color:red; margin-left: 14%">김김김님 환영합니다.</span>
+                        <span class="form-group" style="color:red; margin-left: 14%">${User.userName}님 환영합니다.</span>
                         	<input type="button" class="btn btn-info btn-sm" value="회원정보변경" style="margin-left: 5px">
                             <input type="button" class="btn btn-info btn-sm" value="로그아웃" style="margin-right: 10px">
                     </form>
@@ -195,7 +215,10 @@
                      <hr style="border-color:green">
                      <h3>리뷰</h3>
                      <form name="contentsForm" method="post" id="contentsForm">
-                     <div class="col-xs-6 col-lg-10" style="outline-style: none; ">
+                     <div class="Col-lg-1">
+                     	<h3 style="visiability:hidden">hidden</h3>
+                     </div>
+                     <div class="col-xs-6 col-lg-9" style="outline-style: none; ">
                      	<textarea class="form-control" rows="2" style="margin-left:10px" id="contents"></textarea>
                      </div>
                      <div class="col-xs-6 col-lg-2" style="outline-style: none; ">
@@ -209,7 +232,7 @@
                      <table class="table table-striped" id="contentsTable">
     					<tbody>
 					        <tr>
-					       		<td class="col-lg-1">ID</td>
+					       		<td >ID</td>
 					            <td class="col-lg-11">Contents</td>
 					        </tr>
 					        
