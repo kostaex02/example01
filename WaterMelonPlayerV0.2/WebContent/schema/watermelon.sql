@@ -107,5 +107,5 @@ commit;
 
 select * from user_table;
 select * from review;
-insert into review values(REVIEW_NO.nextval,'mirugt','노래 좋아요',sysdate);
+insert into review values(REVIEW_NO.nextval,'mirugt','노래 좋아s요',sysdate);
 insert into review values(review_no.nextval,'kim','잘 들었습니다.',sysdate);
