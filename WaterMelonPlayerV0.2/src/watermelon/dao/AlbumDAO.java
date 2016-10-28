@@ -8,7 +8,7 @@ import java.sql.Statement;
 import watermelon.util.DBUtil;
 
 public class AlbumDAO {
-	public String selectAlbum(int AlbumNo){
+	public String selectAlbumName(int AlbumNo){
 		System.out.println("AlbumDAOÀÇ "+AlbumNo);
 		Connection con=null;
 		Statement st = null;

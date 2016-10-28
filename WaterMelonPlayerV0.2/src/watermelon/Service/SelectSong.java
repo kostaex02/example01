@@ -17,7 +17,6 @@ public class SelectSong {
 			//dao 에서 얻어온 list값 list에 담기
 			list = dao.selectSongName(content);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//담은 값 리턴

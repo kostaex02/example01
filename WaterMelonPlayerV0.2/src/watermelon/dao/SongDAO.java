@@ -54,7 +54,7 @@ public class SongDAO implements SongInterface {
 			AlbumDAO albumDao = new AlbumDAO();
 			while (rs.next()) {
 				Song song = new Song(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4),
-						rs.getInt(5), rs.getString(6), rs.getInt(7),artistDao.selectArtist(rs.getInt(3)),albumDao.selectAlbum(rs.getInt(5)));
+						rs.getInt(5), rs.getString(6), rs.getInt(7),artistDao.selectArtistName(rs.getInt(3)),albumDao.selectAlbumName(rs.getInt(5)));
 				list.add(song);
 			}	
 		} finally {
