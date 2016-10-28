@@ -11,6 +11,7 @@
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="css/jumbotron.css" rel="stylesheet">
+        <script src="bootstrap/js/jquery-2.2.4.js"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -26,6 +27,32 @@
 	}
 	
 	</style>
+	<script>
+	$(function(){
+		function selectReviewAll(){
+			$.ajax({
+				url:"ReviewSelect",
+				type:"post",
+				dataType:"json",
+				success:function(result){
+					var str="";
+					$("#contentsTable tr:gt(0)").remove();
+					$.each(result, function(index,item){
+						str += "<tr>";
+						str += "<td>" + item.reviewId + "</td>";
+						str += "<td>" + item.reviewContents + "</td>";
+						str += "</tr>";
+					})
+					$("#contentsTable tr:eq(0)").after(str);
+				},
+				error:function(result){
+					
+				}
+			});
+		}
+		selectReviewAll();
+	})
+	</script>
     </head>
     <body>
         <nav class="navbar-inverse" >
@@ -167,29 +194,23 @@
                      <h6>Taylor Swift <br><br><br>노래를 잘함</h6>
                      <hr style="border-color:green">
                      <h3>리뷰</h3>
+                     <form name="contentsForm" method="post" id="contentsForm">
                      <div class="col-xs-6 col-lg-10" style="outline-style: none; ">
-                        	<textarea class="form-control" rows="2" style="margin-left:10px"></textarea>
+                     	<textarea class="form-control" rows="2" style="margin-left:10px" id="contents"></textarea>
                      </div>
                      <div class="col-xs-6 col-lg-2" style="outline-style: none; ">
-                        	<button type="button" class="btn btn-primary btn-lg" style="padding:12px 12px; margin-left:-10px">등록</button>
+                        <button type="button" class="btn btn-primary btn-lg" style="padding:12px 12px; margin-left:-10px" id="btnRegister">등록</button>
                      </div>
+                     </form>
                      .
                      </div>
                      <div class="col-xs-12 col-sm-9">
                      
-                     <table class="table table-striped">
+                     <table class="table table-striped" id="contentsTable">
     					<tbody>
 					        <tr>
 					       		<td class="col-lg-1">ID</td>
 					            <td class="col-lg-11">Contents</td>
-					        </tr>
-					        <tr>
-					            <td>ID</td>
-					            <td>Contents</td>
-					        </tr>
-					        <tr>
-					        	<td>ID</td>
-					            <td>Contents</td>
 					        </tr>
 					        
 					    </tbody>
@@ -205,7 +226,7 @@
         <!-- Bootstrap core JavaScript
     ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="bootstrap/js/jquery-2.2.4.js"></script>
+       
         <script src="bootstrap/js/bootstrap.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
        
