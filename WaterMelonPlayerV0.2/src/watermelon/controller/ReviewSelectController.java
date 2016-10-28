@@ -38,7 +38,6 @@ public class ReviewSelectController extends HttpServlet {
 		
 		List<Review> list = new ArrayList<>();
 		list = ReviewService.selectReviewAll();
-		System.out.println(1);
 		JSONArray jsonArr = JSONArray.fromObject(list);
 		
 		PrintWriter out = response.getWriter();
