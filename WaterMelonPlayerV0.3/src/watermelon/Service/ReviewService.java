@@ -23,6 +23,15 @@ public class ReviewService {
 		}
 		
 		return null;
+	}
+	public static int insertReview(String id, String contents){
+		ReviewDAO dao = new ReviewDAO();
 		
+		try{
+			return dao.insertReview(id,contents);
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+		return 0;
 	}
 }

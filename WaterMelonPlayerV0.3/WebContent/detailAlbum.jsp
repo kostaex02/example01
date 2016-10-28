@@ -33,7 +33,7 @@
 			  $.ajax({
 				  url:"ReviewInsert",
 				  type:"post",
-				  data:"id=" + $("#id").val(),
+				  data:"id=" + $("#id").val()+"&contents="+$("#contents").val(),
 				  dataType:"text",
 				  success:function(result){
 					  if(result>0){
@@ -41,7 +41,7 @@
 						  alert("성공!");
 						  $("input[type=text]").val("");
 						  //모든 레코드 검색
-						  selectAll();
+						  selectReviewAll();
 					  }else{
 						  alert("실패");
 					  }
@@ -215,17 +215,15 @@
                      <hr style="border-color:green">
                      <h3>리뷰</h3>
                      <form name="contentsForm" method="post" id="contentsForm">
-                     <div class="Col-lg-1">
-                     	<input type="hidden" name="id" value=${User.userId }>
-                     </div>
-                     <div class="col-xs-6 col-lg-9" style="outline-style: none; ">
+                     
+                     <div class="col-xs-5 col-lg-8" style="outline-style: none; ">
                      	<textarea class="form-control" rows="2" style="margin-left:10px" id="contents"></textarea>
                      </div>
-                     <div class="col-xs-6 col-lg-2" style="outline-style: none; ">
+                     <div class="col-xs-7 col-lg-4" style="outline-style: none; ">
                         <button type="button" class="btn btn-primary btn-lg" style="padding:12px 12px; margin-left:-10px" id="btnRegister">등록</button>
                      </div>
                      </form>
-                     .
+                     <input type="text", id="id" value=${User.userId } style="visibility:hidden"></input>
                      </div>
                      <div class="col-xs-12 col-sm-9">
                      

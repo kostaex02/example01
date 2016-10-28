@@ -65,15 +65,15 @@ public class ReviewDAO implements ReviewInterface {
 	}
 
 	@Override
-	public int insertReview(Review review) throws SQLException {
+	public int insertReview(String id, String contents) throws SQLException {
 		Connection con = null;
 		PreparedStatement pr = null;
 		int result = 0;
 		try{
 			con = DBUtil.getConnection();
 			pr = con.prepareStatement("insert into review values(REVIEW_NO.nextval,?,?,sysdate)");
-			pr.setString(1, review.getReviewId());
-			pr.setString(2, review.getReviewContents());
+			pr.setString(1, id);
+			pr.setString(2, contents);
 			result = pr.executeUpdate();
 		}finally{
 			DBUtil.dbClose(con, pr, null);

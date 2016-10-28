@@ -24,7 +24,7 @@ public interface ReviewInterface {
 	/**
 	 *  ∏Æ∫‰ ª¿‘
 	 */
-	int insertReview(Review review) throws SQLException;
+	int insertReview(String id, String contents) throws SQLException;
 	
 	/**
 	 *  ∏Æ∫‰ ªË¡¶
