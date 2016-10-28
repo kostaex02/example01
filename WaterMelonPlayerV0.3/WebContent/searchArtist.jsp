@@ -42,6 +42,27 @@ hr {
 }
 </style>
 </head>
+<script src="bootstrap/js/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#myPage").click(function() {
+		location.href="myPage";
+	})
+	
+	$("#logout").click(function() {
+		location.href="logout";
+	})
+	$("#song").click(function() {
+		$("#select").val("song");
+	})
+	$("#album").click(function() {
+		$("#select").val("album");
+	})
+	$("#artist").click(function() {
+		$("#select").val("artist");
+	})
+})
+</script>
 <body>
 	<nav class="navbar-inverse">
 		<div class="container">
@@ -59,12 +80,13 @@ hr {
 			</div>
 			<div id="navbar" class="navbar-collapse collapse"
 				style="margin-left: 27%">
-				<form class="navbar-form">
+				<form class="navbar-form" action="select">
 					<div class="col">
 						<div class="col-lg-4">
 							<div class="input-group" align="left" style="margin-right: -11px">
 								<div class="input-group-btn">
 									<button type="button" class="btn btn-default dropdown-toggle"
+										<input type="hidden" id="select" name="select" value="song" />
 										data-toggle="dropdown" aria-expanded="false">
 										곡명<span class="caret"></span>
 									</button>
@@ -105,14 +127,12 @@ hr {
 			</div>
 			<div class="col-xs-6 col-lg-8"
 				style="margin-top: -5px; outline-style: none">
-				<h3 class="text-left" style="color: #818181; display: inline-block">앨범</h3>
-				<span id="artist">스위티 오</span><br>
 				<h3 class="text-left" style="color: #818181; display: inline-block">아티스트</h3>
-				<span id="artist">테일러 스위프트</span><br>
-				<h3 class="text-left" style="color: #818181; display: inline-block">발매일</h3>
-				<span id="artist">2016-10-27</span><br>
-				<h3 class="text-left" style="color: #818181; display: inline-block">장르</h3>
-				<span id="artist">댄스/발라드</span><br>
+				<span id="artist"><%= %></span><br>
+				<h3 class="text-left" style="color: #818181; display: inline-block">성별</h3>
+				<span id="artist"><%= %></span><br>
+				<h3 class="text-left" style="color: #818181; display: inline-block">그룹</h3>
+				<span id="artist"><%= %></span><br>
 			</div>
 		</div>
 		<%int i = 0;%>

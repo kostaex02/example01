@@ -24,6 +24,27 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+<script src="bootstrap/js/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#myPage").click(function() {
+		location.href="myPage";
+	})
+	
+	$("#logout").click(function() {
+		location.href="logout";
+	})
+	$("#song").click(function() {
+		$("#select").val("song");
+	})
+	$("#album").click(function() {
+		$("#select").val("album");
+	})
+	$("#artist").click(function() {
+		$("#select").val("artist");
+	})
+})
+</script>
 <body>
 	<nav class="navbar-inverse">
 		<div class="container">
@@ -41,7 +62,7 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse"
 				style="margin-left: 27%">
-				<form class="navbar-form">
+				<form class="navbar-form" action="select">
 					<div class="col">
 						<div class="col-lg-4">
 							<div class="input-group" align="right"
@@ -51,6 +72,7 @@
 										data-toggle="dropdown" aria-expanded="false">
 										곡명<span class="caret"></span>
 									</button>
+									<input type="hidden" id="select" name="select" value="song" />
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="#">곡명</a></li>
 										<li><a href="#">앨범</a></li>
