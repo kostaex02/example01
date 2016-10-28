@@ -116,12 +116,12 @@ hr {
 			</div>
 		</div>
 		<%int i = 0;%>
-		<h3
+		<%-- <h3
 			style="margin: 20mm 20px 20px; display: inline-table; margin-right: 0px; font-size: 21px">곡</h3>
 		<span class="badge"
 			style="background-color: green; font-size: medium;"><%=++i %></span>
 		<hr style="border-color: green">
-		<!--/row-->
+		<!--/row-->  --%>
 		<div class="row" style="margin: 0 5px 0">
 			<table class="table table-striped" style="border-color: green">
 				<thead>
@@ -129,16 +129,16 @@ hr {
 						<th></th>
 						<th>No</th>
 						<th></th>
-						<th>곡명</th>
 						<th>아티스트</th>
-						<th>앨범</th>
+						<th>성별</th>
+						<th>그룹</th>
 					</tr>
 				</thead>
 				<tbody>
 					
 					<c:forEach var="artist" items="${list}">
 						<tr>
-							<td class="col-lg-0"><label data-pg-collapsed> <input
+							<%-- <td class="col-lg-0"><label data-pg-collapsed> <input
 									class="control-label" type="checkbox" value=""></label></td>
 							<td class="col-lg-0"><%=i%></td>
 							<td class="col-lg-2"><a href="#" class="btn primary"
@@ -146,7 +146,11 @@ hr {
 									class="pull-left" height="25px" /></a> <a href="#"
 								class="btn primary" id="btn_play"> <img
 									src="img/img_add_before.png" class="pull-left" height="25px" />
-							</a></td> 
+							</a></td>  --%>
+							<br><br><br>
+							<th></th>
+							<th><%=i%></th>
+							<th></th>
 							<td class="col-lg-3">${artist.artistName} <span class="label label-danger">TITLE</span></td>
 							<td class="col-lg-5">${artist.artistGender}</td>
 							<td class="col-lg-9">${artist.artistGroup}</td>

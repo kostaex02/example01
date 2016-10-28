@@ -40,7 +40,7 @@ public class ArtistDAO {
 		Connection con=null;
 		Statement st = null;
 		ResultSet rs=null;
-		String sql = "select * from album where ALBUM_NAME like '%"+content+"%'";
+		String sql = "select * from artist where artist_NAME like '%"+content+"%'";
 		List<Artist> list = new ArrayList<>();
 		
 		try {
