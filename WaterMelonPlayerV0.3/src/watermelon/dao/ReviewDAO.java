@@ -82,14 +82,15 @@ public class ReviewDAO implements ReviewInterface {
 	}
 
 	@Override
-	public int deleteReview(String review_id) throws SQLException {
+	public int deleteReview(int no, String id) throws SQLException {
 		Connection con = null;
 		PreparedStatement pr = null;
 		int result = 0;
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("delete from review where review_id = ?");
-			pr.setString(1	, review_id);
+			pr = con.prepareStatement("delete from review where review_id = ? and review_no = ?");
+			pr.setString(1	, id);
+			pr.setInt(2, no);
 			result = pr.executeUpdate();
 		}finally{
 			DBUtil.dbClose(con, pr, null);

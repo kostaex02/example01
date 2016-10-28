@@ -34,4 +34,14 @@ public class ReviewService {
 		}
 		return 0;
 	}
+	public static int deleteReview(int no, String id){
+		ReviewDAO dao = new ReviewDAO();
+		
+		try{
+			return dao.deleteReview(no,id);
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+		return 0;
+	}
 }

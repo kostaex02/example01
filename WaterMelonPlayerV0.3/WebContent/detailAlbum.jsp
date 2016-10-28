@@ -48,6 +48,26 @@
 				  }
 			  })
 		  })
+		  
+		$(document).on("click","#btnDelete",function(){
+		$.ajax({
+	  		url:"ReviewDelete",
+	  		type:"post",
+	  		data:"id=" + $("#id").val() + "&no=" + $("#no").val(),
+	  		dataType:"text",
+	  		success:function(result){
+	  			if(result>0){
+	  				alert("삭제성공");
+	  				selectReviewAll();
+	  			}else{
+	  				alert("삭제실패");
+	  			}
+	  		},
+	  		error:function(){
+	  			
+	  		}
+	  	})
+	  })
 		
 		function selectReviewAll(){
 			$.ajax({
@@ -61,6 +81,7 @@
 						str += "<tr>";
 						str += "<td>" + item.reviewId + "</td>";
 						str += "<td>" + item.reviewContents + "</td>";
+						str += "<td><button type='button' class='btn btn-default btn-xs' id='btnDelete'>삭제</button></td>"
 						str += "</tr>";
 					})
 					$("#contentsTable tr:eq(0)").after(str);
@@ -223,15 +244,16 @@
                         <button type="button" class="btn btn-primary btn-lg" style="padding:12px 12px; margin-left:-10px" id="btnRegister">등록</button>
                      </div>
                      </form>
-                     <input type="text", id="id" value=${User.userId } style="visibility:hidden"></input>
+                     <input type="text" id="id" value=${User.userId } style="visibility:hidden"></input>
                      </div>
                      <div class="col-xs-12 col-sm-9">
                      
                      <table class="table table-striped" id="contentsTable">
     					<tbody>
 					        <tr>
-					       		<td >ID</td>
-					            <td class="col-lg-11">Contents</td>
+					       		<td class="col-lg-1">ID</td>
+					            <td class="col-lg-9">Contents</td>
+					            <td class="col-lg-2"></td>
 					        </tr>
 					        
 					    </tbody>

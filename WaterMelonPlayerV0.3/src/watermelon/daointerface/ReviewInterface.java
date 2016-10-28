@@ -29,10 +29,10 @@ public interface ReviewInterface {
 	/**
 	 *  ¸®ºä »èÁ¦
 	 */
-	int deleteReview(String review_id) throws SQLException;
+	int deleteReview(int no, String id) throws SQLException;
 	
 	/**
 	 *  ¸®ºä ¼öÁ¤
 	 */
-	int updateReivew(String review_id, String review_contents) throws SQLException;
+	int updateReivew(String id, String contents) throws SQLException;
 }	
