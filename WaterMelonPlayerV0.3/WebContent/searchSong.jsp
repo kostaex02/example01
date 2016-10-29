@@ -34,13 +34,13 @@ $(function() {
 	$("#logout").click(function() {
 		location.href="logout";
 	})
-	$("#song").click(function() {
+	$("#song1").click(function() {
 		$("#select").val("song");
 	})
-	$("#album").click(function() {
+	$("#album1").click(function() {
 		$("#select").val("album");
 	})
-	$("#artist").click(function() {
+	$("#artist1").click(function() {
 		$("#select").val("artist");
 	})
 })
@@ -74,13 +74,13 @@ $(function() {
 									</button>
 									<input type="hidden" id="select" name="select" value="song" />
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">곡명</a></li>
-										<li><a href="#">앨범</a></li>
-										<li><a href="#">아티스트</a></li>
+										<li><a href="#" id="song1">곡명</a></li>
+										<li><a href="#" id="album1">앨범</a></li>
+										<li><a href="#" id="artist1">아티스트</a></li>
 									</ul>
 								</div>
 								<!-- /btn-group -->
-								<input type="text" class="form-control" aria-label="...">
+								<input type="text" class="form-control" aria-label="..." id="content" name="content">
 							</div>
 							<!-- /input-group -->
 						</div>

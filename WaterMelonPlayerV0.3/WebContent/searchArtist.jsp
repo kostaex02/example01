@@ -52,13 +52,13 @@ $(function() {
 	$("#logout").click(function() {
 		location.href="logout";
 	})
-	$("#song").click(function() {
+	$("#song1").click(function() {
 		$("#select").val("song");
 	})
-	$("#album").click(function() {
+	$("#album1").click(function() {
 		$("#select").val("album");
 	})
-	$("#artist").click(function() {
+	$("#artist1").click(function() {
 		$("#select").val("artist");
 	})
 })
@@ -86,18 +86,18 @@ $(function() {
 							<div class="input-group" align="left" style="margin-right: -11px">
 								<div class="input-group-btn">
 									<button type="button" class="btn btn-default dropdown-toggle"
-										<input type="hidden" id="select" name="select" value="song" />
 										data-toggle="dropdown" aria-expanded="false">
 										곡명<span class="caret"></span>
 									</button>
+									<input type="hidden" id="select" name="select" value="song" />
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">곡명</a></li>
-										<li><a href="#">앨범</a></li>
-										<li><a href="#">아티스트</a></li>
+										<li><a href="#" id="song1">곡명</a></li>
+										<li><a href="#" id="album1">앨범</a></li>
+										<li><a href="#" id="artist1">아티스트</a></li>
 									</ul>
 								</div>
 								<!-- /btn-group -->
-								<input type="text" class="form-control" aria-label="...">
+								<input type="text" class="form-control" aria-label="..." id="content" name="content">
 							</div>
 							<!-- /input-group -->
 						</div>
@@ -122,18 +122,20 @@ $(function() {
 		<h5 class="page-header" style="margin: 60px 20px 40px">'artist'에
 			대한 검색 결과입니다.</h5>
 		<div class="row placeholders">
+			<c:forEach var="artist" items="${list}">  <%-- 각 창마다 받아온값을 입력해서 각 값을 출력할수있게 한다. --%>
 			<div class="col-xs-6 col-lg-4">
 				<img src="img/1989.png" style="margin-left: 21px">
 			</div>
 			<div class="col-xs-6 col-lg-8"
 				style="margin-top: -5px; outline-style: none">
 				<h3 class="text-left" style="color: #818181; display: inline-block">아티스트</h3>
-				<span id="artist"><%= %></span><br>
+				<span id="artist"></span><%--아티스트 이름 --%><br>
 				<h3 class="text-left" style="color: #818181; display: inline-block">성별</h3>
-				<span id="artist"><%= %></span><br>
+				<span id="artist"></span><%--아티스트 성별 --%><br>
 				<h3 class="text-left" style="color: #818181; display: inline-block">그룹</h3>
-				<span id="artist"><%= %></span><br>
+				<span id="artist"></span><%--아티스트 그룹여부 --%><br>
 			</div>
+			</c:forEach>
 		</div>
 		<%int i = 0;%>
 		<%-- <h3
@@ -143,6 +145,7 @@ $(function() {
 		<hr style="border-color: green">
 		<!--/row-->  --%>
 		<div class="row" style="margin: 0 5px 0">
+			
 			<table class="table table-striped" style="border-color: green">
 				<thead>
 					<tr>
@@ -169,11 +172,17 @@ $(function() {
 							</a></td>  --%>
 							<br><br><br>
 							<th></th>
-							<th><%=i%></th>
+							<th><%=++i%></th>
 							<th></th>
-							<td class="col-lg-3">${artist.artistName} <span class="label label-danger">TITLE</span></td>
-							<td class="col-lg-5">${artist.artistGender}</td>
-							<td class="col-lg-9">${artist.artistGroup}</td>
+							<td class="col-lg-3">${artist.artistName}</td>
+							<c:choose>
+								<c:when test="${artist.artistGender==1}"><td class="col-lg-5">남자</td></c:when>
+								<c:otherwise><td>여자</td></c:otherwise>
+							</c:choose>
+							<c:choose>
+								<c:when test="${artist.artistGroup==1}"><td class="col-lg-5">그룹</td></c:when>
+								<c:otherwise><td>싱글</td></c:otherwise>
+							</c:choose>
 						</tr>
 					</c:forEach>
 				</tbody>
