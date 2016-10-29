@@ -145,14 +145,6 @@ label {
 							int i = 0;
 						%>
 						<c:forEach var="MyAlbum" items="${myAlbum}">
-							<!-- private int myAlbumNo;
-							private String userId;
-							private String songName;
-							private String artistName;
-							private String albumName;
-							private String songUrl;
-							private String imgUrl; -->
-						</c:forEach>
 							<tr>
 							<td class="col-lg-0"><label data-pg-collapsed><input class="control-label" type="checkbox" value="" align="center"></label></td>
 							<td class="col-lg-0"><%=i++%></td>
@@ -160,33 +152,7 @@ label {
 							<td class="col-lg-3">${MyAlbum.songName}</td>
 							<td class="col-lg-8">${MyAlbum.artistName}</td>
 						</tr>
-						<tr>
-							<td><label data-pg-collapsed> <input
-									class="control-label" type="checkbox" value="">
-							</label></td>
-							<td>2</td>
-							<td><a href="#" class="btn primary" id="btn_play"> <img
-									src="img/img_play_before.png" class="pull-left" height="25px" />
-							</a> <a href="#" class="btn primary" id="btn_play"> <img
-									src="img/img_add_before.png" class="pull-left" height="25px" />
-							</a></td>
-							<td>consectetur</td>
-							<td>adipiscing</td>
-						</tr>
-						<tr>
-							<td><label data-pg-collapsed> <input
-									class="control-label" type="checkbox" value="">
-							</label></td>
-							<td>3</td>
-							<td><a href="#" class="btn primary" id="btn_play"> <img
-									src="img/img_play_before.png" class="pull-left" height="25px" />
-							</a> <a href="#" class="btn primary" id="btn_play"> <img
-									src="img/img_add_before.png" class="pull-left" height="25px" />
-							</a></td>
-							<td>nec</td>
-							<td>odio</td>
-						</tr>
-							
+						</c:forEach>		
 						</tbody>
 					</table>
 				</div>
