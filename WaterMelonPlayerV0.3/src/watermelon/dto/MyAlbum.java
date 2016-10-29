@@ -3,6 +3,7 @@ package watermelon.dto;
 public class MyAlbum {
 	private int myAlbumNo;
 	private String userId;
+	private int songNo;
 	private String songName;
 	private String artistName;
 	private String albumName;
@@ -10,10 +11,11 @@ public class MyAlbum {
 	private String imgUrl;
 	
 	public MyAlbum(){}
-	public MyAlbum(int myAlbumNo, String userId, String songName, String artistName, String albumName, String songUrl,
+	public MyAlbum(int myAlbumNo, String userId, int songNo, String songName, String artistName, String albumName, String songUrl,
 			String imgUrl) {
 		this.myAlbumNo = myAlbumNo;
 		this.userId = userId;
+		this.songNo = songNo;
 		this.songName = songName;
 		this.artistName = artistName;
 		this.albumName = albumName;
@@ -76,6 +78,10 @@ public class MyAlbum {
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}
-	
-	
+	public int getSongNo() {
+		return songNo;
+	}
+	public void setSongNo(int songNo) {
+		this.songNo = songNo;
+	}
 }

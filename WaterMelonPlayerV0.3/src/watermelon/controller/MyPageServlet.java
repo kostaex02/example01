@@ -21,12 +21,7 @@ public class MyPageServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		User user = (User) session.getAttribute("User");
-		List<MyAlbum> albums = UserService.getMyalbum(user.getUserId());
-		session.setAttribute("myAlbum", albums);
-		request.getRequestDispatcher("myPageAlbum.jsp").forward(request, response);
-		
+		this.doPost(request, response);
 	}
 
 	@Override
@@ -37,6 +32,7 @@ public class MyPageServlet extends HttpServlet {
 		User user = (User) session.getAttribute("User");
 		List<MyAlbum> albums = UserService.getMyalbum(user.getUserId());
 		session.setAttribute("myAlbum", albums);
+		System.out.println(albums);
 		request.getRequestDispatcher("myPageAlbum.jsp").forward(request, response);
 	}
 }

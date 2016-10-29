@@ -23,6 +23,7 @@ public class PlaySongServlet extends HttpServlet {
 			throws ServletException, IOException {
 		SelectSong selectSong = new SelectSong();
 		String songNo = request.getParameter("song_no");
+		System.out.println("플레이송 서블렛 - songNo :"+songNo);
 		ArrayList<Song> songs = (ArrayList<Song>) selectSong.getPlaylist(songNo);
 		HttpSession session = request.getSession();
 		if (session.getAttribute("list")!=null) {

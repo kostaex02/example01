@@ -148,7 +148,7 @@ label {
 							<tr>
 							<td class="col-lg-0"><label data-pg-collapsed><input class="control-label" type="checkbox" value="" align="center"></label></td>
 							<td class="col-lg-0"><%=i++%></td>
-							<td class="col-lg-1"><a href="#" class="btn primary" id="btn_play" name="${MyAlbum.userId}"> <img src="img/img_play_before.png" class="pull-left" height="25px" /> </a> <a href="#" class="btn primary" id="btn_play"> <img src="img/img_add_after.png" class="pull-left" height="25px" /></a></td>
+							<td class="col-lg-1"><a href="#" class="btn primary" id="btn_play" name="${MyAlbum.songNo}"> <img src="img/img_play_before.png" class="pull-left" height="25px" /> </a> <a href="#" class="btn primary" id="btn_play"> <img src="img/img_add_after.png" class="pull-left" height="25px" /></a></td>
 							<td class="col-lg-3">${MyAlbum.songName}</td>
 							<td class="col-lg-8">${MyAlbum.artistName}</td>
 						</tr>

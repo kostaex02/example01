@@ -23,14 +23,17 @@ public class MyAlbumDAO implements MyAlbumInterface {
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		connection = DBUtil.getConnection();
-		statement = connection.prepareStatement("SELECT * FROM MY_ALBUM WHERE USER_ID = ?");
+		statement = connection.prepareStatement("SELECT D.my_album_no, D.user_id, "
+				+ "D.song_name, E.song_name, D.artist_name, D.album_name, D.song_url, "
+				+ "D.imgurl FROM my_album D join song E ON D.song_name=E.SONG_NO WHERE "
+				+ "D.USER_ID = ?");
 		statement.setString(1, id);
 		resultSet = statement.executeQuery();
 		
 		while (resultSet.next()) {
 			MyAlbum album = new MyAlbum(resultSet.getInt(1), resultSet.getString(2),
-					resultSet.getString(3), artistDAOdao.selectArtistName(resultSet.getInt(4)),
-					albumDAO.selectAlbumName(resultSet.getInt(5)), resultSet.getString(6), resultSet.getString(7));
+					resultSet.getInt(3), resultSet.getString(4), artistDAOdao.selectArtistName(resultSet.getInt(5)),
+					albumDAO.selectAlbumName(resultSet.getInt(6)), resultSet.getString(7), resultSet.getString(8));
 			list.add(album);
 		}
 		return list;

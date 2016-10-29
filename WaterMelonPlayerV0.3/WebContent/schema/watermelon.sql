@@ -130,3 +130,5 @@ SELECT D.SONG_NAME, D.ARTIST_CODE, D.ALBUM_IMGURL, E.SONG_URL  --준일이형 세렉문
 FROM SONG D join SONG_URL E 
 ON D.SONG_NO=E.SONG_NO 
 where D.SONG_NO = 1; 
+
+SELECT D.my_album_no, D.user_id, D.song_name, E.song_name, D.artist_name, D.album_name, D.song_url, D.imgurl FROM my_album D join song E ON D.song_name=E.SONG_NO
