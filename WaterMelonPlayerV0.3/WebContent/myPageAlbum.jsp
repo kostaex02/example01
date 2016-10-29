@@ -47,6 +47,13 @@
 				}
 			})
 		})
+		$("#logout").click(function() {
+		 var form = document.createElement("form");
+		    form.setAttribute("method", "post");
+		    form.setAttribute("action", "logout");
+		    document.body.appendChild(form);
+		    form.submit();
+		})
 	})
 	</script>
 	</head>
@@ -60,7 +67,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="main.jsp">
         				<img alt="Brand" src="img/waterMelon.png" width="130px" style="margin-top:-7px">
       				</a>
                 </div>
@@ -85,8 +92,7 @@
                         
                         
                         <span class="form-group" style="color:#444444; margin-left: 14%">${User.userName}님 환영합니다.</span>
-                        	<input type="button" class="btn btn-info btn-sm" value="마이페이지" style="margin-left: 5px">
-                            <input type="button" class="btn btn-info btn-sm" value="로그아웃" style="margin-right: 10px">
+                        	<input type="button" class="btn btn-info btn-sm" value="로그아웃" id="logout" style="margin-right: 10px">
                     </form>
                 </span>
                 

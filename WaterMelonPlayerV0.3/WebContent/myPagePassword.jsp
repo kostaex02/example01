@@ -16,6 +16,25 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="bootstrap/js/jquery-2.2.4.js"></script>
+    <script type="text/javascript">
+    $(function() {
+    	$("#logout").click(function() {
+   		 var form = document.createElement("form");
+   		    form.setAttribute("method", "post");
+   		    form.setAttribute("action", "logout");
+   		    document.body.appendChild(form);
+   		    form.submit();
+   		})
+   		$("#myAlbum").click(function() {
+   		 var form = document.createElement("form");
+   		    form.setAttribute("method", "post");
+   		    form.setAttribute("action", "myPage");
+   		    document.body.appendChild(form);
+   		    form.submit();
+   		})
+	})
+    </script>
 </head>
 <body>
 <nav class="navbar-inverse">
@@ -52,8 +71,8 @@
                         
                         
                         <span class="form-group" style="color:#444444; margin-left: 14%">김김김님 환영합니다.</span>
-                        	<input type="button" class="btn btn-info btn-sm" value="마이페이지" style="margin-left: 5px">
-                            <input type="button" class="btn btn-info btn-sm" value="로그아웃" style="margin-right: 10px">
+                        	<input type="button" class="btn btn-info btn-sm" value="마이페이지" id="myAlbum"style="margin-left: 5px">
+                            <input type="button" class="btn btn-info btn-sm" value="로그아웃" id="logout" style="margin-right: 10px">
                     </form>
                 </span>
                 

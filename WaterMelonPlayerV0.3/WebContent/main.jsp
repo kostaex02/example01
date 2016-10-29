@@ -21,9 +21,12 @@ $(function() {
 	$("#myPage").click(function() {
 		location.href="myPage";
 	})
-	
 	$("#logout").click(function() {
-		location.href="logout";
+		 var form = document.createElement("form");
+		    form.setAttribute("method", "post");
+		    form.setAttribute("action", "logout");
+		    document.body.appendChild(form);
+		    form.submit();
 	})
 	$("#song1").click(function() {
 		$("#select").val("song");
