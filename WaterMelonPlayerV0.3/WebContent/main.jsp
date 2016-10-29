@@ -117,7 +117,7 @@
 					<c:forEach var="album" items="${album1}">
 						<div class="col-xs-6 col-lg-4">
 							<a href="detailAlbum.jsp" class="thumbnail"> <img
-								src="img/1989.png" alt="">
+								src="${album.albumImgUrl}" alt="">
 							</a>
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>

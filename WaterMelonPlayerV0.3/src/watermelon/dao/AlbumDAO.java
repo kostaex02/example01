@@ -47,7 +47,7 @@ public class AlbumDAO {
 			ps.setInt(1, albumNo);
 			rs = ps.executeQuery();
 			while(rs.next()){
-				album.add(new Album(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5))); ;
+				album.add(new Album(selectAlbumUrl(rs.getInt(1)),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5))); ;
 			}
 		}catch(SQLException e){
 			e.getStackTrace();
@@ -58,14 +58,23 @@ public class AlbumDAO {
 	}
 	
 	public String selectAlbumUrl(int AlbumNo){
-		String url;
+		String url=null;
 		Connection con=null;
 		PreparedStatement ps = null;
 		ResultSet rs=null;
+		List<Album> album= new ArrayList<>();
 		try{
 			con = DBUtil.getConnection();
 			ps = con.prepareStatement("select * from album where album_no= ? ");
-			ps.setInt(1,AlbumNo );
+			ps.setInt(1,AlbumNo);
+			rs =ps.executeQuery();
+			while(rs.next()){
+				 url = rs.getString(1);
+			}
+		}catch(SQLException e){
+			e.getStackTrace();
+		}finally {
+			DBUtil.dbClose(con, ps, rs);
 		}
 		return url;
 	}
