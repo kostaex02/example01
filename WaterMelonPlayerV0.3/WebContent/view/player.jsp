@@ -197,7 +197,7 @@ $(function() {
 				$("#playlist").empty()
 				//받아온 리스트를 div영역에 뿌려주기
 			 	$.each(result, function(index, item) {
-					$("#playlist").append("<tr><td><input type='checkbox'></td><td id='list'>"+(index+1)+" <a style='text-decoration:none' href='#' data-src='"+item.songUrl+"'>"+item.songName+"</a></td></tr>")
+					$("#playlist").append("<tr><td><input type='checkbox'></td><td id='list'>"+(index+1)+" <a style='text-decoration:none' href='#' data-src='"+item.url+"'>"+item.songName+"</a></td></tr>")
 					.css("height", "50px")
 					if (item.isPlay==1) {
 						$("#playlist tr:nth-child("+(index+1)+") td:nth-child(2)").addClass('playing');
@@ -242,7 +242,7 @@ $(function() {
 				$("#playlist").empty()
 				//받아온 리스트를 div영역에 뿌려주기
 			 	$.each(result, function(index, item) {
-					$("#playlist").append("<tr><td><input type='checkbox'></td><td id='list'>"+(index+1)+" <a style='text-decoration:none' href='#' data-src='"+item.songUrl+"'>"+item.songName+"</a></td></tr>")
+					$("#playlist").append("<tr><td><input type='checkbox'></td><td id='list'>"+(index+1)+" <a style='text-decoration:none' href='#' data-src='"+item.url+"'>"+item.songName+"</a></td></tr>")
 					.css("height", "50px")
 					if (item.isPlay==1) {
 						$("#playlist tr:nth-child("+(index+1)+") td:nth-child(2)").addClass('playing');
@@ -292,7 +292,7 @@ $(function() {
 				$("#playlist").empty()
 				//받아온 리스트를 div영역에 뿌려주기
 			 	$.each(result, function(index, item) {
-					$("#playlist").append("<tr><td><input type='checkbox'></td><td id='list'>"+(index+1)+" <a style='text-decoration:none' href='#' data-src='"+item.songUrl+"'>"+item.songName+"</a></td></tr>")
+					$("#playlist").append("<tr><td><input type='checkbox'></td><td id='list'>"+(index+1)+" <a style='text-decoration:none' href='#' data-src='"+item.url+"'>"+item.songName+"</a></td></tr>")
 					.css("height", "50px")
 					if (item.isPlay==1) {
 						$("#playlist tr:nth-child("+(index+1)+") td:nth-child(2)").addClass('playing');
@@ -360,7 +360,7 @@ $(function() {
 			success:function(result) {
 				//받아온 리스트를 div영역에 뿌려주기
 				$.each(result, function(index, item) {
-					$("#playlist").append("<tr><td><input type='checkbox'></td><td id='list'>"+(index+1)+" <a style='text-decoration:none' href='#' data-src='"+item.songUrl+"'>"+item.songName+"</a></td></tr>")
+					$("#playlist").append("<tr><td><input type='checkbox'></td><td id='list'>"+(index+1)+" <a style='text-decoration:none' href='#' data-src='"+item.url+"'>"+item.songName+"</a></td></tr>")
 					.css("height", "50px")
 				})
 				firstTrack()

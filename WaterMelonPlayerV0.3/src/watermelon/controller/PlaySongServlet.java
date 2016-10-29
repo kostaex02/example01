@@ -30,6 +30,7 @@ public class PlaySongServlet extends HttpServlet {
 			songs = (ArrayList<Song>) session.getAttribute("list");
 		}
 		songs = (ArrayList<Song>) selectSong.getPlaylist(songNo);
+		System.out.println("PlaySongServlet : "+songs.get(0).getUrl());
 		session.setAttribute("list", songs);
 		PrintWriter out = response.getWriter();
 		out.println("go!");
