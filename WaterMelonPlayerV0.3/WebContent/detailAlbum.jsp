@@ -142,7 +142,7 @@
                         
                         <span class="form-group" style="color:red; margin-left: 14%">${User.userName}님 환영합니다.</span>
                     		<input type="button" class="btn btn-info btn-sm" value="로그아웃" id="logout" style="margin-left: 5px">
-                    		<input type="button" class="btn btn-info btn-sm" value="마이페이지" id="mypage" style="margin-right: 10px">
+                    		<input type="button" class="btn btn-info btn-sm" value="마이페이지" id="myPage" style="margin-right: 10px">
                     </form>
                 </span>
                 
