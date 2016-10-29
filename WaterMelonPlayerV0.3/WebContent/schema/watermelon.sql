@@ -203,6 +203,11 @@ insert into album_image values ('../img/', ALBUM_NO.currval);
 insert into song values(song_no.nextval,  'In The Air', artist_no.currval, 1, album_no.currval, '../img/',0);
 insert into SONG_URL values('../mp3/', song_no.currval);
 
+insert into artist values(artist_no.nextval, '../img/', '비스트 (BEAST)',1,1);
+insert into album values(ALBUM_NO.nextval, 'Highlight', artist_no.currval, to_date('2016-07-04', 'YYYY-MM-DD'), 4);
+insert into album_image values ('../img/', ALBUM_NO.currval);
+insert into song values(song_no.nextval,  '하이라이트 (Highlight)', artist_no.currval, 4, album_no.currval, '../img/',1);
+insert into SONG_URL values('../mp3/', song_no.currval);
 
 select * from user_table;
 select * from album_image;
