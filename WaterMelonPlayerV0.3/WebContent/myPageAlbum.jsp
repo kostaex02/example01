@@ -36,29 +36,35 @@ label {
 <script src="bootstrap/js/jquery-2.2.4.min.js"></script>
 <script>
 	$(function() {
-		$(document)
-				.on(
-						"click",
-						"#btn_play",
-						function() {
-							$
-									.ajax({
-										type : "post",
-										url : "playsong",
-										data : "song_no="
-												+ $("#btn_play").attr("name"),
-										dataType : "text",
-										success : function(result) {
-											window
-													.open('view/player.jsp',
-															'player',
-															'width=700, height=500, scrollbars= 0, toolbar=0, menubar=no, resizable=no')
-										},
-										error : function() {
-											alert("showInfo 오류남!")
-										}
-									})
-						})
+		$(document).on("click","#btn_play",function() {
+			$.ajax({
+				type : "post",
+				url : "playsong",
+				data : "song_no="
+						+ $("#btn_play").attr("name"),
+				dataType : "text",
+				success : function(result) {
+					window.open('view/player.jsp','player','width=700, height=500, scrollbars= 0, toolbar=0, menubar=no, resizable=no')
+				},
+				error : function() {
+					alert("showInfo 오류남!")
+				}
+			})
+		})
+		$(document).on("click","#btn_del",function() {
+			$.ajax({
+				type : "post",
+				url : "myPage",
+				data : "del="+ $("#btn_del").attr("name"),
+				dataType : "text",
+				success : function(result) {
+					
+				},
+				error : function() {
+				alert("showInfo 오류남!")
+				}
+			})
+		})
 		$("#logout").click(function() {
 			var form = document.createElement("form");
 			form.setAttribute("method", "post");
