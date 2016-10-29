@@ -3,6 +3,7 @@ package watermelon.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,14 +24,16 @@ public class PlaySongServlet extends HttpServlet {
 			throws ServletException, IOException {
 		SelectSong selectSong = new SelectSong();
 		String songNo = request.getParameter("song_no");
-		System.out.println("플레이송 서블렛 - songNo :"+songNo);
-		ArrayList<Song> songs = (ArrayList<Song>) selectSong.getPlaylist(songNo);
+		ArrayList<Song> songs = new ArrayList<>();
 		HttpSession session = request.getSession();
 		if (session.getAttribute("list")!=null) {
 			songs = (ArrayList<Song>) session.getAttribute("list");
 		}
-		songs = (ArrayList<Song>) selectSong.getPlaylist(songNo);
-		System.out.println("PlaySongServlet : "+songs.get(0).getUrl());
+		ArrayList<Song> newlist = (ArrayList<Song>) selectSong.getPlaylist(songNo);
+		Iterator<Song> iterator = newlist.iterator();
+		while (iterator.hasNext()) {
+			songs.add(iterator.next());
+		}
 		session.setAttribute("list", songs);
 		PrintWriter out = response.getWriter();
 		out.println("go!");
