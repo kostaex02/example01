@@ -36,29 +36,35 @@ label {
 <script src="bootstrap/js/jquery-2.2.4.min.js"></script>
 <script>
 	$(function() {
-		$(document)
-				.on(
-						"click",
-						"#btn_play",
-						function() {
-							$
-									.ajax({
-										type : "post",
-										url : "playsong",
-										data : "song_no="
-												+ $("#btn_play").attr("name"),
-										dataType : "text",
-										success : function(result) {
-											window
-													.open('view/player.jsp',
-															'player',
-															'width=700, height=500, scrollbars= 0, toolbar=0, menubar=no, resizable=no')
-										},
-										error : function() {
-											alert("showInfo 오류남!")
-										}
-									})
-						})
+		$(document).on("click","#btn_play",function() {
+			$.ajax({
+				type : "post",
+				url : "playsong",
+				data : "song_no="
+						+ $("#btn_play").attr("name"),
+				dataType : "text",
+				success : function(result) {
+					window.open('view/player.jsp','player','width=700, height=500, scrollbars= 0, toolbar=0, menubar=no, resizable=no')
+				},
+				error : function() {
+					alert("showInfo 오류남!")
+				}
+			})
+		})
+		$(document).on("click","#btn_del",function() {
+			$.ajax({
+				type : "post",
+				url : "myPage",
+				data : "del="+ $("#btn_del").attr("name"),
+				dataType : "text",
+				success : function(result) {
+					
+				},
+				error : function() {
+				alert("showInfo 오류남!")
+				}
+			})
+		})
 		$("#logout").click(function() {
 			var form = document.createElement("form");
 			form.setAttribute("method", "post");
@@ -148,7 +154,8 @@ label {
 							<tr>
 							<td class="col-lg-0"><label data-pg-collapsed><input class="control-label" type="checkbox" value="" align="center"></label></td>
 							<td class="col-lg-0"><%=i++%></td>
-							<td class="col-lg-1"><a href="#" class="btn primary" id="btn_play" name="${MyAlbum.songNo}"> <img src="img/img_play_before.png" class="pull-left" height="25px" /> </a> <a href="#" class="btn primary" id="btn_play"> <img src="img/img_add_after.png" class="pull-left" height="25px" /></a></td>
+							<td class="col-lg-1"><a href="#" class="btn primary" id="btn_play" name="${MyAlbum.songNo}"> <img src="img/img_play_before.png" class="pull-left" height="25px" /> </a> 
+							<a href="#" class="btn primary" id="btn_del" name="${MyAlbum.songNo}"> <img src="img/img_add_after.png" class="pull-left" height="25px" /></a></td>
 							<td class="col-lg-3">${MyAlbum.songName}</td>
 							<td class="col-lg-8">${MyAlbum.artistName}</td>
 						</tr>

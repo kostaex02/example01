@@ -27,6 +27,9 @@ public class MyPageServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		if (request.getParameter("del")!=null) {
+			System.out.println("마이페이지서블릿 삭제모드");
+		}
 		//받아온 유저정보로 유저의 앨범검색
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("User");
