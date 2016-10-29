@@ -115,6 +115,7 @@
 				</p>
 				<div class="row">
 					<c:forEach var="album" items="${album1}">
+						<form action="">
 						<div class="col-xs-6 col-lg-4">
 							<a href="detailAlbum.jsp" class="thumbnail"> <img
 								src="${album.albumImgUrl}" alt="">
@@ -122,6 +123,7 @@
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
 						</div>
+						</form>
 						<!--this.albumNo = albumNo;
 							this.albumName = albumName;
 							this.albumArtist = albumArtist;
