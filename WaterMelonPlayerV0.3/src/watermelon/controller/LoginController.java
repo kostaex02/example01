@@ -1,6 +1,8 @@
 package watermelon.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import watermelon.Service.SelectUser;
+import watermelon.dao.AlbumDAO;
+import watermelon.dto.Album;
 import watermelon.dto.User;
 
 /**
@@ -25,7 +29,15 @@ public class LoginController extends HttpServlet {
 		User user = service.login(email, pwd);
 		HttpSession session = request.getSession();
 		session.setAttribute("User", user);
+		AlbumDAO dao = new AlbumDAO();
+		List<Album> album = new ArrayList<>();
+		for (int i = 0; i < 5; i++) {
+			dao.selectAlbum(i);
+			request.setAttribute("album"+i, album);
+		}
+		
 		request.getRequestDispatcher("main.jsp").forward(request, response);
 	}
-
+   	
+   	
 }

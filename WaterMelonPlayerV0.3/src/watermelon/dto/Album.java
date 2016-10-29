@@ -8,7 +8,16 @@ public class Album {
 	private String albumArtist;
 	private String debutDate;
 	private String genreCode;
+	private String albumImgUrl;
 	
+	public String getAlbumImgUrl() {
+		return albumImgUrl;
+	}
+
+	public void setAlbumImgUrl(String albumImgUrl) {
+		this.albumImgUrl = albumImgUrl;
+	}
+
 	public Album(){}
 
 	public Album(int albumNo, String albumName, String albumArtist, String debutDate, String genreCode) {
@@ -18,6 +27,16 @@ public class Album {
 		this.debutDate = debutDate;
 		this.genreCode = genreCode;
 	}
+	
+	public Album(String albumImgUrl, String albumName, String albumArtist, String debutDate, String genreCode) {
+		this.albumImgUrl = albumImgUrl;
+		this.albumName = albumName;
+		this.albumArtist = albumArtist;
+		this.debutDate = debutDate;
+		this.genreCode = genreCode;
+	}
+	
+	
 
 	public int getAlbumNo() {
 		return albumNo;
