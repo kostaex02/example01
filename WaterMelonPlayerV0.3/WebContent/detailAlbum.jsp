@@ -39,7 +39,7 @@
 					  if(result>0){
 						  //모든 텍스트박스를 지운다.
 						  alert("성공!");
-						  $("input[type=text]").val("");
+						  $("textArea").val("");
 						  //모든 레코드 검색
 						  selectReviewAll();
 					  }else{
@@ -50,7 +50,7 @@
 		  })
 		  
 		$(document).on("click","#btnDelete",function(){
-			var data = 
+			
 		$.ajax({
 	  		url:"ReviewDelete",
 	  		type:"post",
@@ -258,7 +258,8 @@
 					        
 					    </tbody>
 					</table>
-                </div>
+                	</div>
+                	
                 </div>
             <hr>
             <footer>

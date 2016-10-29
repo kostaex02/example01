@@ -22,7 +22,7 @@ public class ReviewDAO implements ReviewInterface {
 		
 		try{
 			con = DBUtil.getConnection();
-			pr = con.prepareStatement("select * from review");
+			pr = con.prepareStatement("select * from review ORDER BY review_no DESC");
 			rs = pr.executeQuery();
 			
 			while(rs.next()){
