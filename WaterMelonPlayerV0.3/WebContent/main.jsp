@@ -83,7 +83,7 @@ $(function() {
                         <div class="form-group" style="color:red; margin-left:100px">
                         	&nbsp; &nbsp; ${User.userName}님 환영합니다. &nbsp; &nbsp;
                         </div>
-                        	<input type="button" class="btn btn-info btn-sm" id= "logout"value="로그아웃">
+                        	<input type="button" class="btn btn-info btn-sm" id= "logout" value="로그아웃">
                             <input type="button" class="btn btn-info btn-sm" id ="myPage" value="마이페이지">
                     </form>
                 </div>
@@ -150,20 +150,7 @@ $(function() {
                     <!--/row-->
                 </div>
                 <!--/.col-xs-12.col-sm-9-->
-                <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item active">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                    </div>
-                </div>
+                
                 <!--/.sidebar-offcanvas-->
             </div>
             <!--/row-->

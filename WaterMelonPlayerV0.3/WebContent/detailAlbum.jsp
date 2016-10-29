@@ -29,6 +29,16 @@
 	</style>
 	<script>
 	$(function(){
+		$("#myPage").click(function() {
+			location.href="myPage";
+		})
+		$("#logout").click(function() {
+			 var form = document.createElement("form");
+			    form.setAttribute("method", "post");
+			    form.setAttribute("action", "logout");
+			    document.body.appendChild(form);
+			    form.submit();
+		})
 		$("#btnRegister").click(function(){
 			  $.ajax({
 				  url:"ReviewInsert",
@@ -131,8 +141,8 @@
                         
                         
                         <span class="form-group" style="color:red; margin-left: 14%">${User.userName}님 환영합니다.</span>
-                        	<input type="button" class="btn btn-info btn-sm" value="마이페이지" style="margin-left: 5px">
-                            <input type="button" class="btn btn-info btn-sm" value="로그아웃" style="margin-right: 10px">
+                    		<input type="button" class="btn btn-info btn-sm" value="로그아웃" id="logout" style="margin-left: 5px">
+                    		<input type="button" class="btn btn-info btn-sm" value="마이페이지" id="mypage" style="margin-right: 10px">
                     </form>
                 </span>
                 
