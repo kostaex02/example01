@@ -64,7 +64,8 @@ public class AlbumDAO {
 		ResultSet rs=null;
 		try{
 			con = DBUtil.getConnection();
-			con.prepareStatement("select ");
+			ps = con.prepareStatement("select * from album where album_no= ? ");
+			ps.setInt(1,AlbumNo );
 		}
 		return url;
 	}
