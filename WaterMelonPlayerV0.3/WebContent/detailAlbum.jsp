@@ -33,7 +33,7 @@
 			  $.ajax({
 				  url:"ReviewInsert",
 				  type:"post",
-				  data:"id=" + $("#id").val()+"&contents="+$("#contents").val(),
+				  data:"contents="+$("#contents").val(),
 				  dataType:"text",
 				  success:function(result){
 					  if(result>0){
@@ -50,10 +50,11 @@
 		  })
 		  
 		$(document).on("click","#btnDelete",function(){
+			var data = 
 		$.ajax({
 	  		url:"ReviewDelete",
 	  		type:"post",
-	  		data:"id=" + $("#id").val() + "&no=" + $("#no").val(),
+	  		data:"no=" + $(this).attr("name"),
 	  		dataType:"text",
 	  		success:function(result){
 	  			if(result>0){
@@ -79,9 +80,9 @@
 					$("#contentsTable tr:gt(0)").remove();
 					$.each(result, function(index,item){
 						str += "<tr>";
-						str += "<td>" + item.reviewId + "</td>";
-						str += "<td>" + item.reviewContents + "</td>";
-						str += "<td><button type='button' class='btn btn-default btn-xs' id='btnDelete'>삭제</button></td>"
+						str += "<td id='reviewId'>" + item.reviewId + "</td>";
+						str += "<td id='reviewContents'>" + item.reviewContents + "</td>";
+						str += "<td><button type='button' class='btn btn-default btn-xs' id='btnDelete' name="+item.reviewNo + " value="+item.reviewId+">삭제</button></td>"
 						str += "</tr>";
 					})
 					$("#contentsTable tr:eq(0)").after(str);
@@ -244,15 +245,14 @@
                         <button type="button" class="btn btn-primary btn-lg" style="padding:12px 12px; margin-left:-10px" id="btnRegister">등록</button>
                      </div>
                      </form>
-                     <input type="text" id="id" value=${User.userId } style="visibility:hidden"></input>
                      </div>
                      <div class="col-xs-12 col-sm-9">
                      
                      <table class="table table-striped" id="contentsTable">
     					<tbody>
 					        <tr>
-					       		<td class="col-lg-1">ID</td>
-					            <td class="col-lg-9">Contents</td>
+					        	<td class="col-lg-1" align="center">ID</td>
+					            <td class="col-lg-9" align="center">Contents</td>
 					            <td class="col-lg-2"></td>
 					        </tr>
 					        

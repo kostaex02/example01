@@ -8,8 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import watermelon.Service.ReviewService;
+import watermelon.dto.User;
 
 /**
  * Servlet implementation class ReviewInsertController
@@ -31,10 +33,12 @@ public class ReviewInsertController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
 		int result = 0;
 		
-		String id = request.getParameter("id");
+		User user = (User) session.getAttribute("User");
+		String id = user.getUserId();
 		String contents = request.getParameter("contents");
 		
 		result = ReviewService.insertReview(id, contents);
