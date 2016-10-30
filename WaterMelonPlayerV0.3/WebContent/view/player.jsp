@@ -36,12 +36,12 @@ margin-bottom:0px;
 
 #playlist td.playing{
 	width: 350px;
-	background: white;
+	
 }
 #playlistBG{
 	height: 400px;
     width: 350px;
-	background: #00ff00;
+	background: white;
 }
 
 #album {
@@ -52,11 +52,15 @@ margin-bottom:0px;
 #menu {
 	height: 70px;
     width: 350px;
-	background: green;
+	background: white;
 }
 .buttons {
 	height: 70px;
     width: 70px;
+}
+.buttonsmall{
+	height:30px;
+	width:30px;
 }
 #loopBTN{
 	height: 35px;
@@ -64,7 +68,7 @@ margin-bottom:0px;
 }
 
 p { clear: both; }
-.audiojs {width: 220px; height: 22px; background: #404040;
+.audiojs {width: 220px; height: 22px; background: white;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(0.5, #555), color-stop(0.51, #444), color-stop(1, #444));
   background-image: -moz-linear-gradient(center top, #444 0%, #555 50%, #444 51%, #444 100%);
   -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
@@ -341,7 +345,7 @@ $(function() {
 			dataType:"json",
 			success:function(result) {
 				$.each(result, function(index, item) {
-					$("#album").attr("src", item.songImgUrl)
+					$("#album").attr("src", item.albumImgUrl)
 					$("#songName").empty().append(item.songName)
 					$("#artist").empty().append(item.songArtist)
 				})
@@ -426,23 +430,24 @@ $(function() {
 <td>
 <div id="viewsBG">
 <table id="views">
-<tr><td><tr><td><img src="wah.jpg" id="album"></td><td rowspan="2"></td></tr>
+<tr><td><tr><td><img src=wah.jpg id="album"></td><td rowspan="2"></td></tr>
 <tr><td><audio></audio></td></tr>
 <tr><td><div id="songName">곡명</div></td></tr>
 <tr><td><div id="artist">아티스트</div></td></tr>
 <tr><td>
-<img src="orks-red-waaagh1.png" id="prevBTN" class="buttons">
-<img src="orks-red-waaagh1.png" id="playBTN" class="buttons">
-<img src="6.png" id="pauseBTN" class="buttons">
-<img src="orks-red-waaagh1.png" id="nextBTN" class="buttons"></td></tr>
+<img src="prev.png" id="prevBTN" class="buttons">
+<img src="play.png" id="playBTN" class="buttons">
+<img src="pause.png" id="pauseBTN" class="buttons">
+<img src="next.png" id="nextBTN" class="buttons"></td></tr>
 <tr><td>
 <div class="range-slider">
+  <img src="vol.png" id="volBTN" class="buttonsmall">
   <input class="range-slider__range" type="range" value="50" min="0" max="100">
   <span class="range-slider__value">0</span>
 </div>
-<img src="orks-red-waaagh1.png" id="repeatBTN_none" class="buttons">
-<img src="2.jpg" id="repeatBTN_all" class="buttons">
-<img src="3.jpg" id="repeatBTN_single" class="buttons">
+<img src="orks-red-waaagh1.png" id="repeatBTN_none" class="buttonsmall">
+<img src="2.jpg" id="repeatBTN_all" class="buttonsmall">
+<img src="3.jpg" id="repeatBTN_single" class="buttonsmall">
 </td></tr>
 </table>
 </div>
@@ -454,9 +459,9 @@ $(function() {
 </table>
 </div>
 <div id="menu">
-<img src="orks-red-waaagh1.png" id="delBTN" class="buttons">
-<img src="orks-red-waaagh1.png" id="upBTN" class="buttons">
-<img src="orks-red-waaagh1.png" id="downBTN" class="buttons">
+<img src="delete.png" id="delBTN" class="buttonsmall">
+<img src="up.png" id="upBTN" class="buttonsmall">
+<img src="down.png" id="downBTN" class="buttonsmall">
 </div>
 </td>
 
