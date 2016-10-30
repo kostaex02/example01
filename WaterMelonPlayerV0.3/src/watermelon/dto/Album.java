@@ -1,7 +1,5 @@
 package watermelon.dto;
 
-import java.util.Date;
-
 public class Album {
 	private int albumNo;
 	private String albumName;
@@ -9,6 +7,7 @@ public class Album {
 	private String debutDate;
 	private String genreCode;
 	private String albumImgUrl;
+	private String albumContents;
 	
 	public String getAlbumImgUrl() {
 		return albumImgUrl;
@@ -20,21 +19,23 @@ public class Album {
 
 	public Album(){}
 
-	public Album(int albumNo, String albumName, String albumArtist, String debutDate, String genreCode) {
+	public Album(int albumNo, String albumName, String albumArtist, String debutDate, String genreCode, String albumContents) {
 		this.albumNo = albumNo;
 		this.albumName = albumName;
 		this.albumArtist = albumArtist;
 		this.debutDate = debutDate;
 		this.genreCode = genreCode;
+		this.albumContents = albumContents;
 	}
 	
-	public Album(String albumImgUrl,int albumNo ,String albumName, String albumArtist, String debutDate, String genreCode) {
+	public Album(String albumImgUrl,int albumNo ,String albumName, String albumArtist, String debutDate, String genreCode,String albumContents) {
 		this.albumImgUrl = albumImgUrl;
 		this.albumNo = albumNo;
 		this.albumName = albumName;
 		this.albumArtist = albumArtist;
 		this.debutDate = debutDate;
 		this.genreCode = genreCode;
+		this.albumContents = albumContents;
 	}
 	
 	
