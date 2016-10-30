@@ -55,7 +55,7 @@ public class SongDAO implements SongInterface {
 			AlbumDAO albumDao = new AlbumDAO();
 			while (rs.next()) {
 				Song song = new Song(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4),
-						rs.getInt(5), rs.getString(6), rs.getInt(7),artistDao.selectArtistName(rs.getInt(3)),albumDao.selectAlbumName(rs.getInt(5)));
+						rs.getInt(5), rs.getString(6), rs.getInt(7),artistDao.selectArtistName(rs.getInt(3)),albumDao.selectAlbumName(rs.getInt(5)),getSongUrl(rs.getInt(1)));
 				list.add(song);
 			}	
 		} finally {
@@ -170,5 +170,21 @@ public class SongDAO implements SongInterface {
 			
 		}
 		return null;
+	}
+	public String getSongUrl(int songNo) throws SQLException{
+		Connection con = null;
+		PreparedStatement pr = null;
+		ResultSet rs= null;
+		String url = null;
+		try{
+			con = DBUtil.getConnection();
+			pr = con.prepareStatement("select from song_url where song_no = ?");
+			pr.setInt(1, songNo);
+			rs = pr.executeQuery();
+			url = rs.getString(1);
+		}finally{
+			DBUtil.dbClose(con, pr, null);
+		}
+		return url;
 	}
 }

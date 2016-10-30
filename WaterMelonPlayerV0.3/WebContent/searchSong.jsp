@@ -133,18 +133,18 @@ $(function() {
 					<td class="col-lg-0"><%=i%></td>
 					<td class="col-lg-2"><a href="#" class="btn primary"
 						id="btn_play"> <img src="img/img_play_before.png"
-							class="pull-left" height="25px" /></a> <a href="#"
+							class="pull-left" height="25px" /></a> <a href="${song.url}"
 						class="btn primary" id="btn_play"> <img
 							src="img/img_add_before.png" class="pull-left" height="25px" />
 					</a></td>
 					<td class="col-lg-3">${song.songName}
 					<c:choose>
 					<c:when test="${song.songTitle==1}"><span class="label label-danger">TITLE</span></td></c:when>
-					<c:otherwise></c:otherwise>
+					<c:otherwise></td></c:otherwise>
 					</c:choose>					
 					<td class="col-lg-5">${song.aristName}</td>
 					<td class="col-lg-9">${song.albumName}</td>
-
+					<%i+=1;%>
 				</c:forEach>
 			</table>
 		</div>

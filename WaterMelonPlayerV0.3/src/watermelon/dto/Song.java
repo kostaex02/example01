@@ -57,7 +57,7 @@ public class Song {
 		this.songTitle = songTitle;
 	}
 	public Song(int songNo, String songName, int artistCode, String genreCode, int albumCode, String albumImgUrl,
-			int songTitle, String aristName, String albumName) {
+			int songTitle, String aristName, String albumName,String url) {
 		this.songNo = songNo;
 		this.songName = songName;
 		this.artistCode = artistCode;
@@ -67,6 +67,7 @@ public class Song {
 		this.songTitle = songTitle;
 		this.aristName = aristName;
 		this.albumName = albumName;
+		this.url = url;
 	}
 	
 

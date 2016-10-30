@@ -120,11 +120,13 @@
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumImgUrl" value="${album.albumImgUrl}">
 							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
 							<input type="hidden" id="genreCode" value="${album.genreCode}">
+							<input type="hidden" id="genreCode" value="${album.albumContents}">
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album2}">
@@ -133,11 +135,13 @@
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumImgUrl" value="${album.albumImgUrl}">
 							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
 							<input type="hidden" id="genreCode" value="${album.genreCode}">
+							<input type="hidden" id="genreCode" value="${album.albumContents}">
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album3}">
@@ -146,11 +150,13 @@
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumImgUrl" value="${album.albumImgUrl}">
 							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
 							<input type="hidden" id="genreCode" value="${album.genreCode}">
+							<input type="hidden" id="genreCode" value="${album.albumContents}">
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album4}">
@@ -160,10 +166,12 @@
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
 							<input type="hidden" id="albumNo" value="${album.albumNo}">
+							<input type="hidden" id="albumImgUrl" value="${album.albumImgUrl}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
 							<input type="hidden" id="genreCode" value="${album.genreCode}">
+							<input type="hidden" id="genreCode" value="${album.albumContents}">
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album5}">
@@ -172,11 +180,13 @@
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumImgUrl" value="${album.albumImgUrl}">
 							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
 							<input type="hidden" id="genreCode" value="${album.genreCode}">
+							<input type="hidden" id="genreCode" value="${album.albumContents}">
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album6}">
@@ -185,11 +195,13 @@
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumImgUrl" value="${album.albumImgUrl}">
 							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
 							<input type="hidden" id="genreCode" value="${album.genreCode}">
+							<input type="hidden" id="genreCode" value="${album.albumContents}">
 						</div>
 					</c:forEach>
 					</div>

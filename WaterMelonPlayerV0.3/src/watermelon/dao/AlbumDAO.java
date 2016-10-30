@@ -47,7 +47,7 @@ public class AlbumDAO {
 			ps.setInt(1, albumNo);
 			rs = ps.executeQuery();
 			while(rs.next()){
-				album.add(new Album(selectAlbumUrl(rs.getInt(1)),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6))); ;
+				album.add(new Album(selectAlbumUrl(rs.getInt(1)),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7))); ;
 			}
 		}catch(SQLException e){
 			e.getStackTrace();
