@@ -12,7 +12,7 @@ import watermelon.dto.Album;
 import watermelon.util.DBUtil;
 
 public class AlbumDAO {
-	public String selectAlbumName(int AlbumNo){
+	public String selectAlbumName(int AlbumNo) throws SQLException{
 		System.out.println("AlbumDAOÀÇ "+AlbumNo);
 		Connection con=null;
 		Statement st = null;
@@ -47,7 +47,7 @@ public class AlbumDAO {
 			ps.setInt(1, albumNo);
 			rs = ps.executeQuery();
 			while(rs.next()){
-				album.add(new Album(selectAlbumUrl(rs.getInt(1)),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5))); ;
+				album.add(new Album(selectAlbumUrl(rs.getInt(1)),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6))); ;
 			}
 		}catch(SQLException e){
 			e.getStackTrace();

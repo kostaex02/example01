@@ -243,7 +243,7 @@
                      <hr style="border-color:green">
                      <h3>앨범소개</h3>
                      <hr>
-                     <h6>Taylor Swift <br><br><br>노래를 잘함</h6>
+                     <h6>노래를 잘함</h6>
                      <hr style="border-color:green">
                      <h3>리뷰</h3>
                      <form name="contentsForm" method="post" id="contentsForm">

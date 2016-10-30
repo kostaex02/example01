@@ -115,11 +115,12 @@
 				</p>
 				<div class="row">
 					<c:forEach var="album" items="${album1}">
-						<form action="detailAlbum.jsp">
+						<form action="DAController">
 						<div class="col-xs-6 col-lg-4">
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
@@ -127,11 +128,12 @@
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album2}">
-						<form action="detailAlbum.jsp">
+						<form action="DAController">
 						<div class="col-xs-6 col-lg-4">
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
@@ -139,11 +141,12 @@
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album3}">
-						<form action="detailAlbum.jsp">
+						<form action="DAController">
 						<div class="col-xs-6 col-lg-4">
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
@@ -151,11 +154,12 @@
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album4}">
-						<form action="detailAlbum.jsp">
+						<form action="DAController">
 						<div class="col-xs-6 col-lg-4">
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
@@ -163,11 +167,12 @@
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album5}">
-						<form action="detailAlbum.jsp">
+						<form action="DAController">
 						<div class="col-xs-6 col-lg-4">
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">
@@ -175,11 +180,12 @@
 						</div>
 					</c:forEach>
 					<c:forEach var="album" items="${album6}">
-						<form action="detailAlbum.jsp">
+						<form action="DAController">
 						<div class="col-xs-6 col-lg-4">
 							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumNo" value="${album.albumNo}">
 							<input type="hidden" id="albumArtist" value="${album.albumArtist}">
 							<input type="hidden" id="albumName" value="${album.albumName}">
 							<input type="hidden" id="debutDate" value="${album.debutDate}">

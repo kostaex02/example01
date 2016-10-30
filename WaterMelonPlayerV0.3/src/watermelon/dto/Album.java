@@ -28,8 +28,9 @@ public class Album {
 		this.genreCode = genreCode;
 	}
 	
-	public Album(String albumImgUrl, String albumName, String albumArtist, String debutDate, String genreCode) {
+	public Album(String albumImgUrl,int albumNo ,String albumName, String albumArtist, String debutDate, String genreCode) {
 		this.albumImgUrl = albumImgUrl;
+		this.albumNo = albumNo;
 		this.albumName = albumName;
 		this.albumArtist = albumArtist;
 		this.debutDate = debutDate;
