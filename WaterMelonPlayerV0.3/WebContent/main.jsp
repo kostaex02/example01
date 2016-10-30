@@ -115,65 +115,77 @@
 				</p>
 				<div class="row">
 					<c:forEach var="album" items="${album1}">
-						<form action="">
+						<form action="detailAlbum.jsp">
 						<div class="col-xs-6 col-lg-4">
-							<a href="detailAlbum.jsp" class="thumbnail"> <img
-								src="${album.albumImgUrl}" alt="">
-							</a>
+							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
 							<h3 class="text-center">${album.albumArtist}</h3>
 							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumArtist1" value="${album.albumArtist}">
+							<input type="hidden" id="albumName1" value="${album.albumName}">
+							<input type="hidden" id="debutDate1" value="${album.debutDate}">
+							<input type="hidden" id="genreCode1" value="${album.genreCode}">
 						</div>
-						</form>
-						<!--this.albumNo = albumNo;
-							this.albumName = albumName;
-							this.albumArtist = albumArtist;
-							this.debutDate = debutDate;
-							this.genreCode = genreCode; -->
 					</c:forEach>
-
-
-
-
-
-
-
-
-
-
-					<!--/.col-xs-6.col-lg-4-->
-					<div class="col-xs-6 col-lg-4">
-						<a href="#" class="thumbnail"> <img src="img/1989.png" alt="">
-						</a>
-						<h3 class="text-center">가수</h3>
-						<p class="text-center">앨범이름1</p>
-					</div>
-					<!--/.col-xs-6.col-lg-4-->
-					<div class="col-xs-6 col-lg-4">
-						<a href="#" class="thumbnail"> <img src="img/1989.png" alt="">
-						</a>
-						<h3 class="text-center">가수</h3>
-						<p class="text-center">앨범이름1</p>
-					</div>
-					<!--/.col-xs-6.col-lg-4-->
-					<div class="col-xs-6 col-lg-4">
-						<a href="#" class="thumbnail"> <img src="img/1989.png" alt="">
-						</a>
-						<h3 class="text-center">가수</h3>
-						<p class="text-center">앨범이름1</p>
-					</div>
-					<!--/.col-xs-6.col-lg-4-->
-					<div class="col-xs-6 col-lg-4">
-						<a href="#" class="thumbnail"> <img src="img/1989.png" alt="">
-						</a>
-						<h3 class="text-center">가수</h3>
-						<p class="text-center">앨범이름1</p>
-					</div>
-					<!--/.col-xs-6.col-lg-4-->
-					<div class="col-xs-6 col-lg-4">
-						<a href="#" class="thumbnail"> <img src="img/1989.png" alt="">
-						</a>
-						<h3 class="text-center">가수</h3>
-						<p class="text-center">앨범이름1</p>
+					<c:forEach var="album" items="${album2}">
+						<form action="detailAlbum.jsp">
+						<div class="col-xs-6 col-lg-4">
+							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
+							<h3 class="text-center">${album.albumArtist}</h3>
+							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumArtist2" value="${album.albumArtist}">
+							<input type="hidden" id="albumName2" value="${album.albumName}">
+							<input type="hidden" id="debutDate2" value="${album.debutDate}">
+							<input type="hidden" id="genreCode2" value="${album.genreCode}">
+						</div>
+					</c:forEach>
+					<c:forEach var="album" items="${album3}">
+						<form action="detailAlbum.jsp">
+						<div class="col-xs-6 col-lg-4">
+							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
+							<h3 class="text-center">${album.albumArtist}</h3>
+							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumArtist3" value="${album.albumArtist}">
+							<input type="hidden" id="albumName3" value="${album.albumName}">
+							<input type="hidden" id="debutDate3" value="${album.debutDate}">
+							<input type="hidden" id="genreCode3" value="${album.genreCode}">
+						</div>
+					</c:forEach>
+					<c:forEach var="album" items="${album4}">
+						<form action="detailAlbum.jsp">
+						<div class="col-xs-6 col-lg-4">
+							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
+							<h3 class="text-center">${album.albumArtist}</h3>
+							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumArtist4" value="${album.albumArtist}">
+							<input type="hidden" id="albumName4" value="${album.albumName}">
+							<input type="hidden" id="debutDate4" value="${album.debutDate}">
+							<input type="hidden" id="genreCode4" value="${album.genreCode}">
+						</div>
+					</c:forEach>
+					<c:forEach var="album" items="${album5}">
+						<form action="detailAlbum.jsp">
+						<div class="col-xs-6 col-lg-4">
+							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
+							<h3 class="text-center">${album.albumArtist}</h3>
+							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumArtist5" value="${album.albumArtist}">
+							<input type="hidden" id="albumName5" value="${album.albumName}">
+							<input type="hidden" id="debutDate5" value="${album.debutDate}">
+							<input type="hidden" id="genreCode5" value="${album.genreCode}">
+						</div>
+					</c:forEach>
+					<c:forEach var="album" items="${album6}">
+						<form action="detailAlbum.jsp">
+						<div class="col-xs-6 col-lg-4">
+							<input type="image" src="${album.albumImgUrl}" class="thumbnail" alt="" >
+							<h3 class="text-center">${album.albumArtist}</h3>
+							<p class="text-center">${album.albumName}</p>
+							<input type="hidden" id="albumArtist6" value="${album.albumArtist}">
+							<input type="hidden" id="albumName6" value="${album.albumName}">
+							<input type="hidden" id="debutDate6" value="${album.debutDate}">
+							<input type="hidden" id="genreCode6" value="${album.genreCode}">
+						</div>
+					</c:forEach>
 					</div>
 					<!--/.col-xs-6.col-lg-4-->
 				</div>

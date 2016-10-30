@@ -35,7 +35,6 @@ public class LoginController extends HttpServlet {
 			dao.selectAlbum(i);
 			request.setAttribute("album"+i, album);
 		}
-		
 		request.getRequestDispatcher("main.jsp").forward(request, response);
 	}
    	
